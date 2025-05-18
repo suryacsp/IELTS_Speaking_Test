@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+PyMySQL
+python-dotenv
+pytest
+httpx
+hypercorn
+py-jwt
