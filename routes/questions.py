@@ -1,10 +1,22 @@
 import asyncio
 from flask import Blueprint, request, jsonify, current_app
 from models import db, GeneratedQuestion
+from openai import AzureOpenAI
 import httpx
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    api_version="2024-12-01-preview"
+    )
+
 
 questions_bp = Blueprint('questions', __name__)
+
 
 # --------------------------
 # GET /api/questions (async)
@@ -30,49 +42,33 @@ def fetch_questions_from_db():
 # POST /api/generate-question (async)
 # --------------------------
 @questions_bp.route('/generate-question', methods=['POST'])
-async def generate_question():
+def generate_question():
     data = request.get_json()
     topic = data.get("topic")
-
+    
     if not topic:
         return jsonify({"error": "Missing 'topic' in request body"}), 400
 
     try:
-        OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-        url = "https://openrouter.ai/api/v1/chat/completions"
-        headers = {
-            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-            "Content-Type": "application/json"
-        }
-        payload = {
-            "model": "meta-llama/llama-4-scout:free",  # or any other model you want
-            #"model": "qwen/qwen3-8b:free",
-            "messages": [
+        response = client.chat.completions.create(
+            model="gpt-35-turbo",
+            messages=[
                 {"role": "system", "content": "You are an IELTS speaking examiner."},
                 {"role": "user", "content": f"Generate a speaking test question about: {topic}"}
             ],
-            "max_tokens": 150
-        }
+            max_tokens=150,
+            temperature=0.7,
+            top_p=1.0
+        )
 
-        async with httpx.AsyncClient() as client:
-            response = await client.post(url, headers=headers, json=payload)
+        question = response.choices[0].message.content
 
-        response.raise_for_status()
-        generated_question = response.json()["choices"][0]["message"]["content"]
+        # Save to DB (optional)
+        new_entry = GeneratedQuestion(topic=topic, question=question)
+        db.session.add(new_entry)
+        db.session.commit()
 
-        await asyncio.to_thread(save_question_to_db, topic, generated_question)
+        return jsonify({"question": question}), 200
 
-        return jsonify({"question": generated_question})
-
-    except httpx.HTTPStatusError as http_err:
-        return jsonify({"error": "OpenRouter API call failed", "details": str(http_err)}), 502
     except Exception as e:
-        return jsonify({"error": "Internal error during question generation", "details": str(e)}), 500
-
-
-
-# Sync function for DB insert
-def save_question_to_db(topic, question):
-    new_entry = GeneratedQuestion(topic=topic, question=question)
-    db.session.add(new_entry)
-    db.session.commit()
+        return jsonify({"error": "Azure OpenAI call failed", "details": str(e)}), 500

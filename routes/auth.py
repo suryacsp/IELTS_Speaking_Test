@@ -2,9 +2,9 @@ import os
 import jwt
 from datetime import datetime, timedelta, timezone
 from models import db, User
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, g
+from middleware import token_required
 from werkzeug.security import generate_password_hash, check_password_hash
-
 
 
 auth_bp = Blueprint('auth', __name__)
@@ -78,5 +78,22 @@ def generate_jwt(user_id, role):
     secret = os.getenv("JWT_SECRET_KEY")  # Use real env var in .env
     token = jwt.encode(payload, secret, algorithm="HS256")
     return token
+
+@auth_bp.route('/profile', methods=['GET'])
+@token_required
+def get_profile():
+    user = User.query.get(g.user_id)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+
+    return jsonify({
+        "id": user.id,
+        "name": user.name,
+        "email": user.email,
+        "phone": user.phone,
+        "role": user.role,
+        "created_at": user.created_at.isoformat()
+    }), 200
+
 
 

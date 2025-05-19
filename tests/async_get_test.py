@@ -6,7 +6,7 @@ import time
 API_URL = "http://127.0.0.1:8000/api/questions/get-questions"
 
 # Total number of concurrent requests
-NUM_REQUESTS = 5
+NUM_REQUESTS = 10
 
 async def send_get(i):
     async with httpx.AsyncClient() as client:
