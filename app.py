@@ -1,15 +1,32 @@
 import os
-from flask import Flask, jsonify
+import time
+import logging
+from flask import Flask, jsonify, request, g
 from flask_migrate import Migrate
-
 from config import Config
 from models import db
 
-# Import your blueprints (assumes routes/users.py and routes/speaking_tests.py exist)
+# Import blueprints
 from routes.users import users_bp
 from routes.speaking_tests import speaking_tests_bp
 from routes.questions import questions_bp
 from routes.auth import auth_bp
+
+# Logging configuration
+LOG_DIR = "logs"
+LOG_FILE = os.path.join(LOG_DIR, "api.log")
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s [%(module)s] %(message)s",
+    handlers=[
+        logging.FileHandler(LOG_FILE, encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
+
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -42,6 +59,52 @@ def create_app(config_class=Config):
     return app
 
 app = create_app()
+
+# -- Request start time for response time calculation --
+@app.before_request
+def start_timer():
+    g._start_time = time.time()
+
+# -- Log every incoming request --
+@app.before_request
+def log_request():
+    user_id = getattr(g, "user_id", None)
+    method = request.method
+    path = request.path
+    remote_addr = request.remote_addr
+    logging.info(
+        f"REQUEST: {method} {path} | User: {user_id} | IP: {remote_addr} | Args: {dict(request.args)} | Body: {request.get_json(silent=True)}"
+    )
+
+# -- Log every response with status and timing --
+@app.after_request
+def log_response(response):
+    method = request.method
+    path = request.path
+    status = response.status_code
+    user_id = getattr(g, "user_id", None)
+    duration = None
+    if hasattr(g, "_start_time"):
+        duration = round(time.time() - g._start_time, 3)
+    logging.info(
+        f"RESPONSE: {method} {path} | Status: {status} | User: {user_id} | Duration: {duration}s"
+    )
+    return response
+
+# -- Log all unhandled exceptions globally --
+@app.errorhandler(Exception)
+def log_exception(e):
+    import traceback
+    method = request.method
+    path = request.path
+    user_id = getattr(g, "user_id", None)
+    logging.error(
+        f"EXCEPTION: {method} {path} | User: {user_id} | Error: {e} | Traceback: {traceback.format_exc()}"
+    )
+    return (
+        jsonify({"error": "Internal Server Error"}),
+        500,
+    )
 
 
 # Entry point for local development

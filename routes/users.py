@@ -2,6 +2,7 @@
 from flask import Blueprint, request, jsonify
 import re
 from models import db, User
+from middleware import token_required,require_role
 
 users_bp = Blueprint('users', __name__)
 
@@ -34,9 +35,11 @@ def create_user():
     }), 201
 
 @users_bp.route('/list', methods=['GET'])
+@token_required
+@require_role('admin')
 def list_users():
     page = request.args.get('page', 1, type=int)
-    limit = request.args.get('limit', 20, type=int)
+    limit = request.args.get('limit', 5, type=int)
     pagination = User.query.paginate(page=page, per_page=limit, error_out=False)
 
     users = [
@@ -58,6 +61,8 @@ def list_users():
     }), 200
 
 @users_bp.route('/getuserid/<int:user_id>', methods=['GET'])
+@token_required
+@require_role('admin')
 def get_user(user_id):
     user = User.query.get(user_id)
     if not user:

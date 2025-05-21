@@ -1,0 +1,711 @@
+2025-05-20 12:28:31,593 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.178:5000
+2025-05-20 12:28:31,594 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-20 12:28:31,600 INFO [_internal]  * Restarting with stat
+2025-05-20 12:28:35,904 WARNING [_internal]  * Debugger is active!
+2025-05-20 12:28:35,920 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-20 12:29:25,707 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Human Gene Editing'}
+2025-05-20 12:29:28,294 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-20 12:29:28,364 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: None | Duration: 2.657s
+2025-05-20 12:29:28,366 INFO [_internal] 127.0.0.1 - - [20/May/2025 12:29:28] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-20 12:30:41,418 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'virat.kohli@example.in', 'password': 'StrongPass@123'}
+2025-05-20 12:30:41,753 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.335s
+2025-05-20 12:30:41,756 INFO [_internal] 127.0.0.1 - - [20/May/2025 12:30:41] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-20 12:31:04,541 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-20 12:31:04,551 INFO [app] RESPONSE: GET /api/auth/profile | Status: 200 | User: 4 | Duration: 0.01s
+2025-05-20 12:31:04,554 INFO [_internal] 127.0.0.1 - - [20/May/2025 12:31:04] "GET /api/auth/profile HTTP/1.1" 200 -
+2025-05-20 12:36:42,645 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'virat.kohli@example.in', 'password': 'Pa$$w0rd'}
+2025-05-20 12:36:43,500 INFO [app] RESPONSE: POST /api/auth/login | Status: 401 | User: None | Duration: 0.855s
+2025-05-20 12:36:43,518 INFO [_internal] 127.0.0.1 - - [20/May/2025 12:36:43] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2025-05-20 17:49:18,624 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.47:5000
+2025-05-20 17:49:18,625 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-20 17:49:18,630 INFO [_internal]  * Restarting with stat
+2025-05-20 17:49:24,508 WARNING [_internal]  * Debugger is active!
+2025-05-20 17:49:24,530 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-20 17:50:00,187 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': ''}
+2025-05-20 17:50:00,216 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 400 | User: None | Duration: 0.029s
+2025-05-20 17:50:00,266 INFO [_internal] 127.0.0.1 - - [20/May/2025 17:50:00] "[31m[1mPOST /api/questions/generate-question HTTP/1.1[0m" 400 -
+2025-05-20 17:52:40,282 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Surya Prakash', 'email': 'surya.p@example.in', 'phone': '7788991122', 'password': 'Pa$$w0rd', 'role': 'test_taker'}
+2025-05-20 17:52:41,015 INFO [app] RESPONSE: POST /api/auth/register | Status: 201 | User: None | Duration: 0.733s
+2025-05-20 17:52:41,020 INFO [_internal] 127.0.0.1 - - [20/May/2025 17:52:41] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2025-05-20 18:03:16,231 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.47:5000
+2025-05-20 18:03:16,232 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-20 18:03:16,236 INFO [_internal]  * Restarting with stat
+2025-05-20 18:03:22,145 WARNING [_internal]  * Debugger is active!
+2025-05-20 18:03:22,155 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-20 18:03:58,151 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Ashwin Bittu', 'email': 'surya.p@example.in', 'phone': '7788991122', 'password': 'Pa$$w0rd', 'role': 'test_taker'}
+2025-05-20 18:03:58,292 WARNING [auth] Registration failed: Duplicate email | email=surya.p@example.in
+2025-05-20 18:03:58,322 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.171s
+2025-05-20 18:03:58,326 INFO [_internal] 127.0.0.1 - - [20/May/2025 18:03:58] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-20 18:04:21,059 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Ashwin Bittu', 'email': 'ashwin.k@example.in', 'phone': '7788991122', 'password': 'Pa$$w0rd', 'role': 'test_taker'}
+2025-05-20 18:04:21,082 WARNING [auth] Registration failed: Duplicate phone | phone=7788991122
+2025-05-20 18:04:21,088 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.03s
+2025-05-20 18:04:21,092 INFO [_internal] 127.0.0.1 - - [20/May/2025 18:04:21] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-20 18:08:39,519 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 18:09:02,511 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-20 18:09:02,596 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.085s
+2025-05-20 18:35:56,872 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-20 18:36:10,806 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-20 18:36:11,023 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.218s
+2025-05-21 11:15:15,624 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 11:15:15,625 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 11:15:15,630 INFO [_internal]  * Restarting with stat
+2025-05-21 11:15:21,310 WARNING [_internal]  * Debugger is active!
+2025-05-21 11:15:21,326 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 11:16:48,167 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Jay Kumar', 'email': 'jay.kumar@taketest.in', 'phone': '7788992233', 'password': 'Pa$$w0rd'}
+2025-05-21 11:16:49,724 INFO [app] RESPONSE: POST /api/auth/register | Status: 201 | User: None | Duration: 1.557s
+2025-05-21 11:16:49,727 INFO [_internal] 127.0.0.1 - - [21/May/2025 11:16:49] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2025-05-21 11:28:44,742 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 11:28:44,743 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 11:28:44,747 INFO [_internal]  * Restarting with stat
+2025-05-21 11:28:50,875 WARNING [_internal]  * Debugger is active!
+2025-05-21 11:28:50,885 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 11:30:48,666 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Shreyas Iyer', 'email': 'iyer.shreyas@taketest.in', 'phone': '8500868699', 'password': 'easypassword'}
+2025-05-21 11:30:48,671 INFO [app] RESPONSE: POST /api/auth/register | Status: 400 | User: None | Duration: 0.005s
+2025-05-21 11:30:48,674 INFO [_internal] 127.0.0.1 - - [21/May/2025 11:30:48] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 400 -
+2025-05-21 11:32:25,020 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Shreyas Iyer', 'email': 'iyer.shreyas@taketest.in', 'phone': '8500868699', 'password': 'easypassword', 'role': 'examiner'}
+2025-05-21 11:32:25,090 INFO [app] RESPONSE: POST /api/auth/register | Status: 400 | User: None | Duration: 0.071s
+2025-05-21 11:32:25,115 INFO [_internal] 127.0.0.1 - - [21/May/2025 11:32:25] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 400 -
+2025-05-21 11:58:10,455 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 11:58:10,456 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 11:58:10,462 INFO [_internal]  * Restarting with stat
+2025-05-21 11:58:14,927 WARNING [_internal]  * Debugger is active!
+2025-05-21 11:58:14,942 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 11:59:46,940 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'virat.kohli@example.in', 'password': 'StrongPass@123'}
+2025-05-21 11:59:47,380 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.44s
+2025-05-21 11:59:47,386 INFO [_internal] 127.0.0.1 - - [21/May/2025 11:59:47] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 12:00:42,920 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:00:42,928 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/auth/profile | IP: 127.0.0.1
+2025-05-21 12:00:42,929 INFO [app] RESPONSE: GET /api/auth/profile | Status: 401 | User: None | Duration: 0.008s
+2025-05-21 12:00:42,930 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:00:42] "[31m[1mGET /api/auth/profile HTTP/1.1[0m" 401 -
+2025-05-21 12:01:53,649 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'surya.p@example.in', 'password': 'Pa$$w0rd'}
+2025-05-21 12:01:53,978 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.329s
+2025-05-21 12:01:53,982 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:01:53] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 12:02:14,118 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:02:14,119 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/auth/profile | IP: 127.0.0.1
+2025-05-21 12:02:14,120 INFO [app] RESPONSE: GET /api/auth/profile | Status: 401 | User: None | Duration: 0.002s
+2025-05-21 12:02:14,122 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:02:14] "[31m[1mGET /api/auth/profile HTTP/1.1[0m" 401 -
+2025-05-21 12:02:44,077 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 12:02:44,078 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 12:02:44,082 INFO [_internal]  * Restarting with stat
+2025-05-21 12:02:48,575 WARNING [_internal]  * Debugger is active!
+2025-05-21 12:02:48,584 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 12:03:24,897 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'surya.p@example.in', 'password': 'Pa$$w0rd'}
+2025-05-21 12:03:25,311 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.414s
+2025-05-21 12:03:25,315 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:03:25] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 12:03:45,808 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:03:45,817 INFO [app] RESPONSE: GET /api/auth/profile | Status: 200 | User: 6 | Duration: 0.009s
+2025-05-21 12:03:45,820 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:03:45] "GET /api/auth/profile HTTP/1.1" 200 -
+2025-05-21 12:04:09,409 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:04:09,411 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/auth/profile | IP: 127.0.0.1
+2025-05-21 12:04:09,412 INFO [app] RESPONSE: GET /api/auth/profile | Status: 401 | User: None | Duration: 0.002s
+2025-05-21 12:04:09,412 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:04:09] "[31m[1mGET /api/auth/profile HTTP/1.1[0m" 401 -
+2025-05-21 12:34:17,985 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 12:34:17,986 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 12:34:17,989 INFO [_internal]  * Restarting with stat
+2025-05-21 12:34:22,788 WARNING [_internal]  * Debugger is active!
+2025-05-21 12:34:22,797 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 12:34:38,753 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:34:38,870 ERROR [app] EXCEPTION: POST /api/questions/generate-questions | User: None | Error: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'. | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\questions.py", line 78, in generate_questions
+    data = request.get_json()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\wrappers.py", line 214, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+    ...<2 lines>...
+    )
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+2025-05-21 12:34:38,872 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 500 | User: None | Duration: 0.119s
+2025-05-21 12:34:38,873 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:34:38] "[35m[1mPOST /api/questions/generate-questions HTTP/1.1[0m" 500 -
+2025-05-21 12:37:52,325 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:37:52,329 ERROR [app] EXCEPTION: POST /api/questions/generate-questions | User: None | Error: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'. | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\questions.py", line 78, in generate_questions
+    data = request.get_json()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\wrappers.py", line 214, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+    ...<2 lines>...
+    )
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+
+2025-05-21 12:37:52,330 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 500 | User: None | Duration: 0.006s
+2025-05-21 12:37:52,332 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:37:52] "[35m[1mPOST /api/questions/generate-questions HTTP/1.1[0m" 500 -
+2025-05-21 12:40:15,869 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Nuclear Weapons', 'Hiking', 'Winter season']}
+2025-05-21 12:40:18,481 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:40:18,939 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:40:19,325 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:40:19,335 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: None | Duration: 3.466s
+2025-05-21 12:40:19,336 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:40:19] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-21 12:42:31,375 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Deep Sea exploration']}
+2025-05-21 12:42:32,116 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:42:32,134 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: None | Duration: 0.759s
+2025-05-21 12:42:32,135 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:42:32] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-21 12:46:33,088 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 12:46:33,089 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 12:46:33,092 INFO [_internal]  * Restarting with stat
+2025-05-21 12:46:37,399 WARNING [_internal]  * Debugger is active!
+2025-05-21 12:46:37,410 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 12:46:46,433 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Invisible Cities and Their Inhabitants', 'The Economics of Wishing Wells', 'Life Lessons from Imaginary Friends', 'How Smells Influence Architecture', 'The Secret Lives of Lost Socks', 'Philosophy of Waiting in Long Queues', 'Fashion Trends Among Aliens']}
+2025-05-21 12:46:49,954 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:46:50,437 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:46:52,196 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:47:00,248 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:47:00,667 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:47:01,262 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:47:01,627 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 12:47:01,641 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: None | Duration: 15.208s
+2025-05-21 12:47:01,644 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:47:01] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-21 12:49:55,562 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 12:49:55,564 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 12:49:55,569 INFO [_internal]  * Restarting with stat
+2025-05-21 12:49:59,929 WARNING [_internal]  * Debugger is active!
+2025-05-21 12:49:59,939 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 12:50:41,523 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 12:51:04,711 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:51:04,772 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.061s
+2025-05-21 12:54:29,036 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 12:54:29,037 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 12:54:29,041 INFO [_internal]  * Restarting with stat
+2025-05-21 12:54:35,916 WARNING [_internal]  * Debugger is active!
+2025-05-21 12:54:35,929 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 12:55:48,618 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:55:48,686 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 200 | User: None | Duration: 0.068s
+2025-05-21 12:55:48,689 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:55:48] "GET /api/users/getuserid/7 HTTP/1.1" 200 -
+2025-05-21 12:57:13,050 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:57:13,085 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: None | Duration: 0.035s
+2025-05-21 12:57:13,090 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:57:13] "GET /api/users/list HTTP/1.1" 200 -
+2025-05-21 12:58:19,629 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\users.py', reloading
+2025-05-21 12:58:20,212 INFO [_internal]  * Restarting with stat
+2025-05-21 12:58:29,739 WARNING [_internal]  * Debugger is active!
+2025-05-21 12:58:29,757 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 12:58:30,256 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 12:58:30,506 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: None | Duration: 0.25s
+2025-05-21 12:58:30,599 INFO [_internal] 127.0.0.1 - - [21/May/2025 12:58:30] "GET /api/users/list HTTP/1.1" 200 -
+2025-05-21 12:59:18,902 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\users.py', reloading
+2025-05-21 12:59:19,410 INFO [_internal]  * Restarting with stat
+2025-05-21 12:59:25,610 WARNING [_internal]  * Debugger is active!
+2025-05-21 12:59:25,625 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 13:03:10,521 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 13:03:10,525 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 13:03:10,530 INFO [_internal]  * Restarting with stat
+2025-05-21 13:03:15,919 WARNING [_internal]  * Debugger is active!
+2025-05-21 13:03:15,932 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 13:03:28,279 INFO [app] REQUEST: GET /users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-21 13:03:28,281 INFO [app] RESPONSE: GET /users/list | Status: 404 | User: None | Duration: 0.001s
+2025-05-21 13:03:28,282 INFO [_internal] 127.0.0.1 - - [21/May/2025 13:03:28] "[33mGET /users/list?page=1&limit=5 HTTP/1.1[0m" 404 -
+2025-05-21 13:04:13,513 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\users.py', reloading
+2025-05-21 13:04:14,009 INFO [_internal]  * Restarting with stat
+2025-05-21 13:04:23,022 WARNING [_internal]  * Debugger is active!
+2025-05-21 13:04:23,037 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 13:04:25,388 INFO [app] REQUEST: GET /users/list | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 13:04:25,408 INFO [app] RESPONSE: GET /users/list | Status: 404 | User: None | Duration: 0.02s
+2025-05-21 13:04:25,558 INFO [_internal] 127.0.0.1 - - [21/May/2025 13:04:25] "[33mGET /users/list HTTP/1.1[0m" 404 -
+2025-05-21 13:05:21,638 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 13:05:21,737 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: None | Duration: 0.099s
+2025-05-21 13:05:21,741 INFO [_internal] 127.0.0.1 - - [21/May/2025 13:05:21] "GET /api/users/list HTTP/1.1" 200 -
+2025-05-21 13:05:53,954 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '2'} | Body: None
+2025-05-21 13:05:53,977 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: None | Duration: 0.024s
+2025-05-21 13:05:54,024 INFO [_internal] 127.0.0.1 - - [21/May/2025 13:05:54] "GET /api/users/list?page=2 HTTP/1.1" 200 -
+2025-05-21 13:06:29,811 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'surya.p@example.in', 'password': 'Pa$$w0rd'}
+2025-05-21 13:06:31,385 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 1.574s
+2025-05-21 13:06:31,389 INFO [_internal] 127.0.0.1 - - [21/May/2025 13:06:31] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 13:08:30,539 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '3'} | Body: None
+2025-05-21 13:08:30,554 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: None | Duration: 0.015s
+2025-05-21 13:08:30,557 INFO [_internal] 127.0.0.1 - - [21/May/2025 13:08:30] "GET /api/users/list?page=1&limit=3 HTTP/1.1" 200 -
+2025-05-21 13:15:03,083 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\questions.py', reloading
+2025-05-21 13:15:03,482 INFO [_internal]  * Restarting with stat
+2025-05-21 14:25:01,289 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 14:25:01,290 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 14:25:01,295 INFO [_internal]  * Restarting with stat
+2025-05-21 14:25:07,826 WARNING [_internal]  * Debugger is active!
+2025-05-21 14:25:07,838 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 14:25:30,822 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\questions.py', reloading
+2025-05-21 14:25:31,364 INFO [_internal]  * Restarting with stat
+2025-05-21 14:25:38,937 WARNING [_internal]  * Debugger is active!
+2025-05-21 14:25:38,961 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 14:26:54,671 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:27:07,413 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-21 14:27:07,556 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.143s
+2025-05-21 14:27:32,978 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '2', 'limit': '5'} | Body: None
+2025-05-21 14:27:33,052 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.074s
+2025-05-21 14:27:47,545 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '3', 'limit': '5'} | Body: None
+2025-05-21 14:27:47,569 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.023s
+2025-05-21 14:29:00,369 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 14:29:00,463 ERROR [app] EXCEPTION: GET /api/questions/get-questions | User: None | Error: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit' | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 254, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 331, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\questions.py", line 27, in get_mock_questions
+    questions = await asyncio.to_thread(fetch_questions_from_db)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+TypeError: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit'
+
+2025-05-21 14:29:00,468 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 500 | User: None | Duration: 0.099s
+2025-05-21 14:30:40,293 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 14:30:40,362 ERROR [app] EXCEPTION: GET /api/questions/get-questions | User: None | Error: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit' | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 254, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 331, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\questions.py", line 27, in get_mock_questions
+    questions = await asyncio.to_thread(fetch_questions_from_db)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+TypeError: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit'
+
+2025-05-21 14:30:40,377 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 500 | User: None | Duration: 0.084s
+2025-05-21 14:31:35,058 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 14:31:36,521 ERROR [app] EXCEPTION: GET /api/questions/get-questions | User: None | Error: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit' | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 254, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 331, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\questions.py", line 27, in get_mock_questions
+    questions = await asyncio.to_thread(fetch_questions_from_db)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+TypeError: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit'
+
+2025-05-21 14:31:37,019 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 500 | User: None | Duration: 1.961s
+2025-05-21 14:33:08,505 ERROR [base_events] Accept failed on a socket
+socket: <asyncio.TransportSocket fd=568, family=2, type=1, proto=6, laddr=('127.0.0.1', 8000)>
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\proactor_events.py", line 860, in loop
+    f = self._proactor.accept(sock)
+  File "C:\Python313\Lib\asyncio\windows_events.py", line 550, in accept
+    self._register_with_iocp(listener)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\windows_events.py", line 710, in _register_with_iocp
+    _overlapped.CreateIoCompletionPort(obj.fileno(), self._iocp, 0, 0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 87] The parameter is incorrect
+2025-05-21 14:33:25,636 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:33:35,737 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 14:33:35,768 ERROR [app] EXCEPTION: GET /api/questions/get-questions | User: None | Error: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit' | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 254, in __call__
+    return call_result.result()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\asgiref\sync.py", line 331, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\questions.py", line 27, in get_mock_questions
+    questions = await asyncio.to_thread(fetch_questions_from_db)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+TypeError: fetch_questions_from_db() missing 2 required positional arguments: 'page' and 'limit'
+
+2025-05-21 14:33:35,770 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 500 | User: None | Duration: 0.033s
+2025-05-21 14:36:11,906 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 14:36:18,812 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 14:36:18,893 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.081s
+2025-05-21 14:36:38,568 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '2', 'limit': '5'} | Body: None
+2025-05-21 14:36:38,602 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.034s
+2025-05-21 14:42:36,615 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 14:42:36,616 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 14:42:36,619 INFO [_internal]  * Restarting with stat
+2025-05-21 14:42:42,394 WARNING [_internal]  * Debugger is active!
+2025-05-21 14:42:42,409 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 14:43:06,883 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Artificial Intelligence in Everyday Life', 'The Role of Mathematics in Engineering', 'Recent Advances in Biotechnology', 'The Importance of Cybersecurity', 'Renewable Energy Solutions', 'Robotics and Automation', 'The Impact of Data Science on Society', 'Space Exploration and Its Benefits', 'The Future of Medical Technology']}
+2025-05-21 14:43:12,184 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:12,885 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:16,254 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:17,305 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:21,680 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:23,139 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:23,751 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:24,055 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:24,780 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 14:43:24,804 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: None | Duration: 17.922s
+2025-05-21 14:43:24,806 INFO [_internal] 127.0.0.1 - - [21/May/2025 14:43:24] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-21 14:48:01,179 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 14:48:01,186 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 14:48:01,192 INFO [_internal]  * Restarting with stat
+2025-05-21 14:48:07,636 WARNING [_internal]  * Debugger is active!
+2025-05-21 14:48:07,648 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 14:48:25,037 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Meera Nair', 'email': 'meera@example.in', 'phone': '9876543210', 'password': 'SecurePass@2024', 'role': 'test_taker'}
+2025-05-21 14:48:25,255 WARNING [auth] Registration failed: Duplicate phone | phone=9876543210
+2025-05-21 14:48:25,273 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.237s
+2025-05-21 14:48:25,387 INFO [_internal] 127.0.0.1 - - [21/May/2025 14:48:25] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-21 14:48:51,069 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Meera Nair', 'email': 'meera@example.in', 'phone': '7899874321', 'password': 'SecurePass@2024', 'role': 'test_taker'}
+2025-05-21 14:48:52,785 INFO [app] RESPONSE: POST /api/auth/register | Status: 201 | User: None | Duration: 1.717s
+2025-05-21 14:48:52,789 INFO [_internal] 127.0.0.1 - - [21/May/2025 14:48:52] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2025-05-21 15:10:46,994 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 15:10:46,995 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 15:10:46,999 INFO [_internal]  * Restarting with stat
+2025-05-21 15:10:53,167 WARNING [_internal]  * Debugger is active!
+2025-05-21 15:10:53,179 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 15:11:08,473 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'aarav.sharma@example.in', 'password': 'StrongPass@123'}
+2025-05-21 15:11:08,796 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.324s
+2025-05-21 15:11:08,800 INFO [_internal] 127.0.0.1 - - [21/May/2025 15:11:08] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 15:11:45,395 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '3'} | Body: None
+2025-05-21 15:11:45,399 WARNING [middleware] AUTH FAILURE: Missing or malformed Authorization header | Path: /api/users/list | IP: 127.0.0.1
+2025-05-21 15:11:45,400 INFO [app] RESPONSE: GET /api/users/list | Status: 401 | User: None | Duration: 0.006s
+2025-05-21 15:11:45,405 INFO [_internal] 127.0.0.1 - - [21/May/2025 15:11:45] "[31m[1mGET /api/users/list?page=1&limit=3 HTTP/1.1[0m" 401 -
+2025-05-21 15:12:21,676 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '3'} | Body: None
+2025-05-21 15:12:22,846 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: 3 | Duration: 1.17s
+2025-05-21 15:12:23,130 INFO [_internal] 127.0.0.1 - - [21/May/2025 15:12:23] "GET /api/users/list?page=1&limit=3 HTTP/1.1" 200 -
+2025-05-21 15:13:31,104 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-21 15:13:31,347 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: 3 | Duration: 0.244s
+2025-05-21 15:13:31,411 INFO [_internal] 127.0.0.1 - - [21/May/2025 15:13:31] "GET /api/users/list?page=1&limit=5 HTTP/1.1" 200 -
+2025-05-21 16:05:22,394 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 16:05:22,395 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 16:05:22,400 INFO [_internal]  * Restarting with stat
+2025-05-21 16:05:41,300 WARNING [_internal]  * Debugger is active!
+2025-05-21 16:05:41,786 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 16:05:45,141 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'virat.kohli@example.in', 'password': 'StrongPass@123'}
+2025-05-21 16:05:45,654 INFO [auth] LOGIN SUCCESS: email=virat.kohli@example.in | user_id=4 | IP=127.0.0.1
+2025-05-21 16:05:45,657 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.517s
+2025-05-21 16:05:45,662 INFO [_internal] 127.0.0.1 - - [21/May/2025 16:05:45] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 16:06:27,515 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 16:06:27,518 WARNING [middleware] AUTH FAILURE: Missing or malformed Authorization header | Path: /api/users/getuserid/7 | IP: 127.0.0.1
+2025-05-21 16:06:27,522 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 401 | User: None | Duration: 0.011s
+2025-05-21 16:06:27,590 INFO [_internal] 127.0.0.1 - - [21/May/2025 16:06:27] "[31m[1mGET /api/users/getuserid/7 HTTP/1.1[0m" 401 -
+2025-05-21 16:06:38,247 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 16:06:38,262 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 403 | User: 4 | Duration: 0.015s
+2025-05-21 16:06:38,376 INFO [_internal] 127.0.0.1 - - [21/May/2025 16:06:38] "[31m[1mGET /api/users/getuserid/7 HTTP/1.1[0m" 403 -
+2025-05-21 16:07:00,019 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'aarav.sharma@example.in', 'password': 'StrongPass@123'}
+2025-05-21 16:07:01,706 INFO [auth] LOGIN SUCCESS: email=aarav.sharma@example.in | user_id=3 | IP=127.0.0.1
+2025-05-21 16:07:01,714 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 1.71s
+2025-05-21 16:07:01,739 INFO [_internal] 127.0.0.1 - - [21/May/2025 16:07:01] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 16:07:24,112 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 16:07:24,178 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 200 | User: 3 | Duration: 0.066s
+2025-05-21 16:07:24,228 INFO [_internal] 127.0.0.1 - - [21/May/2025 16:07:24] "GET /api/users/getuserid/7 HTTP/1.1" 200 -
+2025-05-21 17:23:15,688 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 17:23:15,691 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 17:23:15,698 INFO [_internal]  * Restarting with stat
+2025-05-21 17:23:20,310 WARNING [_internal]  * Debugger is active!
+2025-05-21 17:23:20,335 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 17:23:31,299 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'aarav.sharma@example.in', 'password': 'StrongPass@123'}
+2025-05-21 17:23:31,640 INFO [auth] LOGIN SUCCESS: email=aarav.sharma@example.in | user_id=3 | IP=127.0.0.1
+2025-05-21 17:23:31,641 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.343s
+2025-05-21 17:23:31,644 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:23:31] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 17:24:03,347 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:24:03,442 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:24:03] "[35m[1mGET /api/questions/get-questions HTTP/1.1[0m" 500 -
+2025-05-21 17:24:41,365 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 17:24:57,081 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:24:57,083 ERROR [app] Exception on /api/questions/get-questions [GET]
+Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 1249, in make_response
+    raise TypeError(
+    ...<5 lines>...
+    )
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a coroutine.
+2025-05-21 17:24:57,089 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 500 | User: 3 | Duration: 0.008s
+2025-05-21 17:25:12,482 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '2', 'limit': '5'} | Body: None
+2025-05-21 17:25:12,483 WARNING [middleware] AUTH FAILURE: Missing or malformed Authorization header | Path: /api/questions/get-question-pages | IP: 127.0.0.1
+2025-05-21 17:25:12,484 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 401 | User: None | Duration: 0.003s
+2025-05-21 17:25:38,922 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '2', 'limit': '5'} | Body: None
+2025-05-21 17:25:38,924 ERROR [app] Exception on /api/questions/get-question-pages [GET]
+Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 1249, in make_response
+    raise TypeError(
+    ...<5 lines>...
+    )
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a coroutine.
+2025-05-21 17:25:38,931 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 500 | User: 3 | Duration: 0.008s
+2025-05-21 17:26:47,127 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 17:26:47,128 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 17:26:47,132 INFO [_internal]  * Restarting with stat
+2025-05-21 17:26:51,726 WARNING [_internal]  * Debugger is active!
+2025-05-21 17:26:51,737 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 17:27:28,513 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\questions.py', reloading
+2025-05-21 17:27:29,021 INFO [_internal]  * Restarting with stat
+2025-05-21 17:27:34,358 WARNING [_internal]  * Debugger is active!
+2025-05-21 17:27:34,370 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 17:28:39,164 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': ''}
+2025-05-21 17:28:39,165 WARNING [middleware] AUTH FAILURE: Missing or malformed Authorization header | Path: /api/questions/generate-question | IP: 127.0.0.1
+2025-05-21 17:28:39,166 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 401 | User: None | Duration: 0.002s
+2025-05-21 17:28:39,169 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:28:39] "[31m[1mPOST /api/questions/generate-question HTTP/1.1[0m" 401 -
+2025-05-21 17:29:22,575 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': ''}
+2025-05-21 17:29:22,576 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 400 | User: 3 | Duration: 0.002s
+2025-05-21 17:29:22,578 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:29:22] "[31m[1mPOST /api/questions/generate-question HTTP/1.1[0m" 400 -
+2025-05-21 17:30:17,696 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Quantum Computing'}
+2025-05-21 17:30:19,507 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 17:30:19,589 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 3 | Duration: 1.893s
+2025-05-21 17:30:19,590 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:30:19] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-21 17:35:58,417 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['The Role of Statistics in Research', 'Virtual Reality in Education', '3D Printing in Modern Manufacturing']}
+2025-05-21 17:35:59,040 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 17:35:59,543 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 17:36:00,038 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 17:36:00,059 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: 3 | Duration: 1.642s
+2025-05-21 17:36:00,060 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:36:00] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-21 17:36:21,874 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'aarav.sharma@example.in', 'password': 'StrongPass@123'}
+2025-05-21 17:36:22,156 INFO [auth] LOGIN SUCCESS: email=aarav.sharma@example.in | user_id=3 | IP=127.0.0.1
+2025-05-21 17:36:22,157 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.283s
+2025-05-21 17:36:22,160 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:36:22] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 17:36:49,280 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'cyber crime'}
+2025-05-21 17:36:49,800 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-21 17:36:49,816 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 3 | Duration: 0.536s
+2025-05-21 17:36:49,818 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:36:49] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-21 17:41:29,531 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'virat.kohli@example.in', 'password': 'StrongPass@123'}
+2025-05-21 17:41:29,790 INFO [auth] LOGIN SUCCESS: email=virat.kohli@example.in | user_id=4 | IP=127.0.0.1
+2025-05-21 17:41:29,792 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.261s
+2025-05-21 17:41:29,795 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:41:29] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 17:43:14,586 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Robotic Surgery'}
+2025-05-21 17:43:14,587 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 403 | User: 4 | Duration: 0.001s
+2025-05-21 17:43:14,588 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:43:14] "[31m[1mPOST /api/questions/generate-question HTTP/1.1[0m" 403 -
+2025-05-21 17:49:40,426 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 17:49:40,427 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 17:49:40,431 INFO [_internal]  * Restarting with stat
+2025-05-21 17:49:46,620 WARNING [_internal]  * Debugger is active!
+2025-05-21 17:49:46,635 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 17:50:15,555 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:50:16,385 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.831s
+2025-05-21 17:50:16,465 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:50:16] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:51:13,601 INFO [logging] Running on http://127.0.0.1:8000 (CTRL + C to quit)
+2025-05-21 17:51:29,040 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:51:30,736 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 1.696s
+2025-05-21 17:51:57,960 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:51:58,219 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.259s
+2025-05-21 17:52:03,411 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:52:03,666 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.255s
+2025-05-21 17:52:06,856 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:52:06,940 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.084s
+2025-05-21 17:52:10,063 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:52:10,095 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.032s
+2025-05-21 17:52:12,880 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:52:13,273 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.394s
+2025-05-21 17:52:15,671 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:52:15,932 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.261s
+2025-05-21 17:52:38,251 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 17:52:38,253 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 17:52:38,257 INFO [_internal]  * Restarting with stat
+2025-05-21 17:52:44,579 WARNING [_internal]  * Debugger is active!
+2025-05-21 17:52:44,592 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 17:53:00,085 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:01,071 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.986s
+2025-05-21 17:53:01,077 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:01] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:05,643 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:05,673 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.03s
+2025-05-21 17:53:05,676 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:05] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:08,477 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:08,509 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.031s
+2025-05-21 17:53:08,512 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:08] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:11,201 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:11,525 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.324s
+2025-05-21 17:53:11,601 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:11] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:14,164 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:14,253 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.089s
+2025-05-21 17:53:14,290 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:14] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:16,391 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:16,589 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.198s
+2025-05-21 17:53:16,593 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:16] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:19,686 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:19,814 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.129s
+2025-05-21 17:53:19,831 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:19] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:23,872 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:24,052 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.18s
+2025-05-21 17:53:24,072 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:24] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:53:25,916 INFO [app] REQUEST: GET /api/questions/get-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 17:53:26,032 INFO [app] RESPONSE: GET /api/questions/get-questions | Status: 200 | User: None | Duration: 0.116s
+2025-05-21 17:53:26,035 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:53:26] "GET /api/questions/get-questions HTTP/1.1" 200 -
+2025-05-21 17:56:10,162 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 17:56:10,163 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 17:56:10,167 INFO [_internal]  * Restarting with stat
+2025-05-21 17:56:16,950 WARNING [_internal]  * Debugger is active!
+2025-05-21 17:56:16,966 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 17:56:46,711 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '2', 'limit': '5'} | Body: None
+2025-05-21 17:56:47,071 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.363s
+2025-05-21 17:56:47,075 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:56:47] "GET /api/questions/get-question-pages?page=2&limit=5 HTTP/1.1" 200 -
+2025-05-21 17:57:00,002 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '7', 'limit': '5'} | Body: None
+2025-05-21 17:57:01,038 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 1.035s
+2025-05-21 17:57:01,060 INFO [_internal] 127.0.0.1 - - [21/May/2025 17:57:01] "GET /api/questions/get-question-pages?page=7&limit=5 HTTP/1.1" 200 -
+2025-05-21 18:05:09,093 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.173:5000
+2025-05-21 18:05:09,093 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-21 18:05:09,098 INFO [_internal]  * Restarting with stat
+2025-05-21 18:05:21,127 WARNING [_internal]  * Debugger is active!
+2025-05-21 18:05:21,143 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-21 18:05:33,210 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:05:33,807 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.646s
+2025-05-21 18:05:33,828 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:05:33] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-21 18:05:48,188 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:05:48,988 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 0.8s
+2025-05-21 18:05:49,479 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:05:49] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-21 18:05:57,735 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:06:01,870 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 4.136s
+2025-05-21 18:06:01,886 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:01] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-21 18:06:04,945 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:06:04,973 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 0.028s
+2025-05-21 18:06:04,978 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:04] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-21 18:06:07,961 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:06:07,998 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 0.037s
+2025-05-21 18:06:08,013 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:08] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-21 18:06:11,640 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:06:11,659 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 0.019s
+2025-05-21 18:06:11,703 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:11] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-21 18:06:18,802 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:06:18,811 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.009s
+2025-05-21 18:06:18,815 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:18] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-21 18:06:21,616 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:06:22,231 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.615s
+2025-05-21 18:06:23,721 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:23] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-21 18:06:29,114 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-21 18:06:29,159 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.045s
+2025-05-21 18:06:29,165 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:29] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -

@@ -32,4 +32,4 @@ class GeneratedQuestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     topic = db.Column(db.String(255), nullable=False)
     question = db.Column(db.Text, nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc), nullable=False)
