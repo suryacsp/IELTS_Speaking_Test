@@ -1,4 +1,4 @@
-# IELTS Speaking Test API
+# IELTS Speaking Test Mock application
 
 This repository provides a Flask-based RESTful API for managing IELTS-style speaking test assignments as part of a training assignment. The system supports user registration and authentication, role-based access control, test scheduling and scoring, and AI-powered generation of speaking questions.
 
