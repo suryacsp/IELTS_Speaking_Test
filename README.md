@@ -15,7 +15,7 @@ This repository provides a Flask-based RESTful API for managing IELTS-style spea
 ## Technology Stack
 
 - **Backend**: Python, Flask, Flask-SQLAlchemy, Flask-Migrate
-- **Database**: Configurable via SQLALCHEMY_DATABASE_URI (supports PostgreSQL, MySQL, etc.)
+- **Database**: Configurable via SQLALCHEMY_DATABASE_URI (MySQL)
 - **Authentication**: JWT (JSON Web Tokens)
 - **AI Integration**: Azure OpenAI API
 - **Migrations**: Alembic
