@@ -709,3 +709,980 @@ TypeError: The view function did not return a valid response. The return type mu
 2025-05-21 18:06:29,114 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
 2025-05-21 18:06:29,159 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.045s
 2025-05-21 18:06:29,165 INFO [_internal] 127.0.0.1 - - [21/May/2025 18:06:29] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-23 15:12:56,013 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.123:5000
+2025-05-23 15:12:56,015 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-23 15:12:56,022 INFO [_internal]  * Restarting with stat
+2025-05-23 15:13:31,539 INFO [_internal] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.182.18.123:5000
+2025-05-23 15:13:31,540 INFO [_internal] [33mPress CTRL+C to quit[0m
+2025-05-23 15:13:31,545 INFO [_internal]  * Restarting with stat
+2025-05-23 15:13:37,509 WARNING [_internal]  * Debugger is active!
+2025-05-23 15:13:37,542 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-23 15:16:53,176 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Meera Nair', 'email': 'meera@example.in', 'phone': '7899874321', 'password': 'SecurePass@2024', 'role': 'test_taker'}
+2025-05-23 15:16:53,507 WARNING [auth] Registration failed: Duplicate email | email=meera@example.in
+2025-05-23 15:16:53,515 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.373s
+2025-05-23 15:16:53,523 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:16:53] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-23 15:18:14,826 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Arjun Sarkar', 'email': 'arjun.sarkar2025@example.com', 'phone': '9876543212', 'password': 'StrongPass#2025', 'role': 'admin'}
+2025-05-23 15:18:17,045 INFO [app] RESPONSE: POST /api/auth/register | Status: 201 | User: None | Duration: 2.22s
+2025-05-23 15:18:17,049 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:18:17] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2025-05-23 15:19:49,290 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'arjun.sarkar2025@example.com', 'password': 'StrongPass#2025'}
+2025-05-23 15:19:50,089 INFO [auth] LOGIN SUCCESS: email=arjun.sarkar2025@example.com | user_id=9 | IP=127.0.0.1
+2025-05-23 15:19:50,099 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.81s
+2025-05-23 15:19:50,213 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:19:50] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 15:20:40,067 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Crypto Mining'}
+2025-05-23 15:20:44,235 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:20:44,702 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 9 | Duration: 4.635s
+2025-05-23 15:20:44,713 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:20:44] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-23 15:30:08,155 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\questions.py', reloading
+2025-05-23 15:30:08,733 INFO [_internal]  * Restarting with stat
+2025-05-23 15:30:15,365 WARNING [_internal]  * Debugger is active!
+2025-05-23 15:30:15,378 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-23 15:30:43,888 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Solar flares'}
+2025-05-23 15:30:48,287 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:30:48,625 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 9 | Duration: 4.737s
+2025-05-23 15:30:48,647 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:30:48] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-23 15:32:22,482 INFO [_internal]  * Detected change in 'C:\\Edubot\\IELTS_Speaking_Test\\routes\\questions.py', reloading
+2025-05-23 15:32:23,006 INFO [_internal]  * Restarting with stat
+2025-05-23 15:32:29,821 WARNING [_internal]  * Debugger is active!
+2025-05-23 15:32:29,839 INFO [_internal]  * Debugger PIN: 106-685-586
+2025-05-23 15:34:06,933 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 15:34:06,942 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/auth/profile | IP: 127.0.0.1
+2025-05-23 15:34:07,267 INFO [app] RESPONSE: GET /api/auth/profile | Status: 401 | User: None | Duration: 0.334s
+2025-05-23 15:34:07,637 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:34:07] "[31m[1mGET /api/auth/profile HTTP/1.1[0m" 401 -
+2025-05-23 15:34:29,512 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 15:34:29,837 INFO [app] RESPONSE: GET /api/auth/profile | Status: 200 | User: 9 | Duration: 0.325s
+2025-05-23 15:34:29,844 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:34:29] "GET /api/auth/profile HTTP/1.1" 200 -
+2025-05-23 15:35:00,968 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-23 15:35:01,007 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: 9 | Duration: 0.039s
+2025-05-23 15:35:01,014 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:35:01] "GET /api/users/list?page=1&limit=5 HTTP/1.1" 200 -
+2025-05-23 15:41:37,146 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Wearable Biosensors for Personal Health', 'Urban Heat Islands and Climate Adaptation', 'Smart Textiles in Sports Technology', 'Bioinformatics in Rare Disease Discovery', 'Microbial Fuel Cells for Clean Energy', 'Edge Computing in IoT Devices', 'Tactile Feedback in Robotic Surgery']}
+2025-05-23 15:41:42,937 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:41:43,760 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:41:43,966 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:41:44,267 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:41:44,672 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:41:44,989 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:41:45,397 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:41:45,414 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: 9 | Duration: 8.276s
+2025-05-23 15:41:45,417 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:41:45] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-23 15:46:32,093 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 15:46:32,114 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/users/getuserid/7 | IP: 127.0.0.1
+2025-05-23 15:46:32,127 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 401 | User: None | Duration: 0.044s
+2025-05-23 15:46:32,183 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:32] "[31m[1mGET /api/users/getuserid/7 HTTP/1.1[0m" 401 -
+2025-05-23 15:46:32,423 INFO [app] REQUEST: GET /api/speaking_tests/testid/2 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 15:46:32,562 INFO [app] RESPONSE: GET /api/speaking_tests/testid/2 | Status: 200 | User: None | Duration: 0.139s
+2025-05-23 15:46:32,593 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:32] "GET /api/speaking_tests/testid/2 HTTP/1.1" 200 -
+2025-05-23 15:46:32,772 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 15:46:32,898 INFO [app] RESPONSE: GET /api/auth/profile | Status: 200 | User: 9 | Duration: 0.126s
+2025-05-23 15:46:32,907 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:32] "GET /api/auth/profile HTTP/1.1" 200 -
+2025-05-23 15:46:33,216 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-23 15:46:33,246 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: 9 | Duration: 0.031s
+2025-05-23 15:46:33,349 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:33] "GET /api/users/list?page=1&limit=5 HTTP/1.1" 200 -
+2025-05-23 15:46:33,494 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 15:46:33,627 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.136s
+2025-05-23 15:46:33,636 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:33] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-23 15:46:33,764 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 15:46:35,112 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 1.348s
+2025-05-23 15:46:35,333 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:35] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-23 15:46:35,607 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '7', 'limit': '5'} | Body: None
+2025-05-23 15:46:35,818 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.214s
+2025-05-23 15:46:35,858 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:35] "GET /api/questions/get-question-pages?page=7&limit=5 HTTP/1.1" 200 -
+2025-05-23 15:46:36,015 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'arjun.sarkar2025@example.com', 'password': 'StrongPass#2025'}
+2025-05-23 15:46:37,429 INFO [auth] LOGIN SUCCESS: email=arjun.sarkar2025@example.com | user_id=9 | IP=127.0.0.1
+2025-05-23 15:46:37,433 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 1.418s
+2025-05-23 15:46:37,440 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:37] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 15:46:37,627 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Arjun Sarkar', 'email': 'arjun.sarkar2025@example.com', 'phone': '9876543212', 'password': 'StrongPass#2025', 'role': 'admin'}
+2025-05-23 15:46:37,663 WARNING [auth] Registration failed: Duplicate email | email=arjun.sarkar2025@example.com
+2025-05-23 15:46:37,681 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.059s
+2025-05-23 15:46:37,685 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:37] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-23 15:46:37,790 INFO [app] REQUEST: POST /api/speaking_tests/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'user_id': 1, 'test_date': '2025-04-10T14:30:00', 'score': 7, 'status': 'completed'}
+2025-05-23 15:46:37,986 INFO [app] RESPONSE: POST /api/speaking_tests/create | Status: 201 | User: None | Duration: 0.196s
+2025-05-23 15:46:38,103 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:38] "[35m[1mPOST /api/speaking_tests/create HTTP/1.1[0m" 201 -
+2025-05-23 15:46:38,369 INFO [app] REQUEST: POST /api/users/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388'}
+2025-05-23 15:46:39,428 ERROR [app] EXCEPTION: POST /api/users/create | User: None | Error: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'password' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\users.py", line 30, in create_user
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-05-23 15:46:39,439 INFO [app] RESPONSE: POST /api/users/create | Status: 500 | User: None | Duration: 1.069s
+2025-05-23 15:46:39,441 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:39] "[35m[1mPOST /api/users/create HTTP/1.1[0m" 500 -
+2025-05-23 15:46:39,483 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Solar flares'}
+2025-05-23 15:46:40,083 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:40,155 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 9 | Duration: 0.672s
+2025-05-23 15:46:40,162 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:40] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-23 15:46:40,248 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Wearable Biosensors for Personal Health', 'Urban Heat Islands and Climate Adaptation', 'Smart Textiles in Sports Technology', 'Bioinformatics in Rare Disease Discovery', 'Microbial Fuel Cells for Clean Energy', 'Edge Computing in IoT Devices', 'Tactile Feedback in Robotic Surgery']}
+2025-05-23 15:46:40,514 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:40,818 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:41,261 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:41,953 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:42,771 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:43,176 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:43,414 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 15:46:43,455 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: 9 | Duration: 3.22s
+2025-05-23 15:46:43,462 INFO [_internal] 127.0.0.1 - - [23/May/2025 15:46:43] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-23 16:03:45,657 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:03:45,668 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/users/getuserid/7 | IP: 127.0.0.1
+2025-05-23 16:03:45,713 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 401 | User: None | Duration: 0.048s
+2025-05-23 16:03:45,758 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:45] "[31m[1mGET /api/users/getuserid/7 HTTP/1.1[0m" 401 -
+2025-05-23 16:03:45,982 INFO [app] REQUEST: GET /api/speaking_tests/testid/2 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:03:46,590 INFO [app] RESPONSE: GET /api/speaking_tests/testid/2 | Status: 200 | User: None | Duration: 0.609s
+2025-05-23 16:03:46,749 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:46] "GET /api/speaking_tests/testid/2 HTTP/1.1" 200 -
+2025-05-23 16:03:47,012 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:03:47,136 INFO [app] RESPONSE: GET /api/auth/profile | Status: 200 | User: 9 | Duration: 0.124s
+2025-05-23 16:03:47,166 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:47] "GET /api/auth/profile HTTP/1.1" 200 -
+2025-05-23 16:03:47,323 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-23 16:03:47,420 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: 9 | Duration: 0.098s
+2025-05-23 16:03:47,452 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:47] "GET /api/users/list?page=1&limit=5 HTTP/1.1" 200 -
+2025-05-23 16:03:47,554 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:03:47,758 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.205s
+2025-05-23 16:03:47,770 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:47] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-23 16:03:47,828 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:03:47,852 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 0.024s
+2025-05-23 16:03:47,856 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:47] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-23 16:03:47,919 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '7', 'limit': '5'} | Body: None
+2025-05-23 16:03:47,965 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.046s
+2025-05-23 16:03:47,972 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:47] "GET /api/questions/get-question-pages?page=7&limit=5 HTTP/1.1" 200 -
+2025-05-23 16:03:48,035 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'arjun.sarkar2025@example.com', 'password': 'StrongPass#2025'}
+2025-05-23 16:03:48,404 INFO [auth] LOGIN SUCCESS: email=arjun.sarkar2025@example.com | user_id=9 | IP=127.0.0.1
+2025-05-23 16:03:48,406 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.372s
+2025-05-23 16:03:48,411 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:48] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 16:03:48,451 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Arjun Sarkar', 'email': 'arjun.sarkar2025@example.com', 'phone': '9876543212', 'password': 'StrongPass#2025', 'role': 'admin'}
+2025-05-23 16:03:48,456 WARNING [auth] Registration failed: Duplicate email | email=arjun.sarkar2025@example.com
+2025-05-23 16:03:48,457 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.006s
+2025-05-23 16:03:48,460 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:48] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-23 16:03:48,532 INFO [app] REQUEST: POST /api/speaking_tests/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'user_id': 1, 'test_date': '2025-04-10T14:30:00', 'score': 7, 'status': 'completed'}
+2025-05-23 16:03:48,560 INFO [app] RESPONSE: POST /api/speaking_tests/create | Status: 201 | User: None | Duration: 0.029s
+2025-05-23 16:03:48,563 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:48] "[35m[1mPOST /api/speaking_tests/create HTTP/1.1[0m" 201 -
+2025-05-23 16:03:48,609 INFO [app] REQUEST: POST /api/users/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388'}
+2025-05-23 16:03:48,649 ERROR [app] EXCEPTION: POST /api/users/create | User: None | Error: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'password' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\users.py", line 30, in create_user
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-05-23 16:03:48,655 INFO [app] RESPONSE: POST /api/users/create | Status: 500 | User: None | Duration: 0.047s
+2025-05-23 16:03:48,658 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:48] "[35m[1mPOST /api/users/create HTTP/1.1[0m" 500 -
+2025-05-23 16:03:48,696 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Solar flares'}
+2025-05-23 16:03:49,119 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:49,136 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 9 | Duration: 0.44s
+2025-05-23 16:03:49,137 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:49] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-23 16:03:49,170 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Wearable Biosensors for Personal Health', 'Urban Heat Islands and Climate Adaptation', 'Smart Textiles in Sports Technology', 'Bioinformatics in Rare Disease Discovery', 'Microbial Fuel Cells for Clean Energy', 'Edge Computing in IoT Devices', 'Tactile Feedback in Robotic Surgery']}
+2025-05-23 16:03:49,378 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:49,677 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:49,927 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:50,246 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:50,553 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:50,758 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:50,966 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:03:50,981 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: 9 | Duration: 1.812s
+2025-05-23 16:03:50,982 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:03:50] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-23 16:04:34,950 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:04:34,953 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/users/getuserid/7 | IP: 127.0.0.1
+2025-05-23 16:04:34,959 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 401 | User: None | Duration: 0.01s
+2025-05-23 16:04:34,968 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:34] "[31m[1mGET /api/users/getuserid/7 HTTP/1.1[0m" 401 -
+2025-05-23 16:04:35,029 INFO [app] REQUEST: GET /api/speaking_tests/testid/2 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:04:35,036 INFO [app] RESPONSE: GET /api/speaking_tests/testid/2 | Status: 200 | User: None | Duration: 0.008s
+2025-05-23 16:04:35,039 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:35] "GET /api/speaking_tests/testid/2 HTTP/1.1" 200 -
+2025-05-23 16:04:35,189 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:04:35,195 INFO [app] RESPONSE: GET /api/auth/profile | Status: 200 | User: 9 | Duration: 0.006s
+2025-05-23 16:04:35,198 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:35] "GET /api/auth/profile HTTP/1.1" 200 -
+2025-05-23 16:04:35,282 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-23 16:04:35,292 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: 9 | Duration: 0.011s
+2025-05-23 16:04:35,296 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:35] "GET /api/users/list?page=1&limit=5 HTTP/1.1" 200 -
+2025-05-23 16:04:35,358 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:04:35,367 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.01s
+2025-05-23 16:04:35,371 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:35] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-23 16:04:35,445 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:04:35,464 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 0.019s
+2025-05-23 16:04:35,467 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:35] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-23 16:04:35,553 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '7', 'limit': '5'} | Body: None
+2025-05-23 16:04:35,576 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.023s
+2025-05-23 16:04:35,581 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:35] "GET /api/questions/get-question-pages?page=7&limit=5 HTTP/1.1" 200 -
+2025-05-23 16:04:35,664 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'arjun.sarkar2025@example.com', 'password': 'StrongPass#2025'}
+2025-05-23 16:04:36,193 INFO [auth] LOGIN SUCCESS: email=arjun.sarkar2025@example.com | user_id=9 | IP=127.0.0.1
+2025-05-23 16:04:36,198 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.534s
+2025-05-23 16:04:36,205 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:36] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 16:04:36,289 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Arjun Sarkar', 'email': 'arjun.sarkar2025@example.com', 'phone': '9876543212', 'password': 'StrongPass#2025', 'role': 'admin'}
+2025-05-23 16:04:36,297 WARNING [auth] Registration failed: Duplicate email | email=arjun.sarkar2025@example.com
+2025-05-23 16:04:36,300 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.011s
+2025-05-23 16:04:36,312 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:36] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-23 16:04:36,347 INFO [app] REQUEST: POST /api/speaking_tests/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'user_id': 1, 'test_date': '2025-04-10T14:30:00', 'score': 7, 'status': 'completed'}
+2025-05-23 16:04:36,365 INFO [app] RESPONSE: POST /api/speaking_tests/create | Status: 201 | User: None | Duration: 0.019s
+2025-05-23 16:04:36,375 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:36] "[35m[1mPOST /api/speaking_tests/create HTTP/1.1[0m" 201 -
+2025-05-23 16:04:36,456 INFO [app] REQUEST: POST /api/users/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388'}
+2025-05-23 16:04:36,485 ERROR [app] EXCEPTION: POST /api/users/create | User: None | Error: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'password' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\users.py", line 30, in create_user
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-05-23 16:04:36,519 INFO [app] RESPONSE: POST /api/users/create | Status: 500 | User: None | Duration: 0.044s
+2025-05-23 16:04:36,533 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:36] "[35m[1mPOST /api/users/create HTTP/1.1[0m" 500 -
+2025-05-23 16:04:36,598 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Solar flares'}
+2025-05-23 16:04:37,007 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:37,032 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 9 | Duration: 0.434s
+2025-05-23 16:04:37,033 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:37] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-23 16:04:37,079 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Wearable Biosensors for Personal Health', 'Urban Heat Islands and Climate Adaptation', 'Smart Textiles in Sports Technology', 'Bioinformatics in Rare Disease Discovery', 'Microbial Fuel Cells for Clean Energy', 'Edge Computing in IoT Devices', 'Tactile Feedback in Robotic Surgery']}
+2025-05-23 16:04:37,365 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:37,715 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:38,023 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:38,399 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:38,683 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:38,987 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:39,297 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:04:39,317 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: 9 | Duration: 2.238s
+2025-05-23 16:04:39,318 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:04:39] "POST /api/questions/generate-questions HTTP/1.1" 200 -
+2025-05-23 16:05:37,385 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'arjun.sarkar2025@example.com', 'password': 'StrongPass#2025'}
+2025-05-23 16:05:37,819 INFO [auth] LOGIN SUCCESS: email=arjun.sarkar2025@example.com | user_id=9 | IP=127.0.0.1
+2025-05-23 16:05:37,820 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.437s
+2025-05-23 16:05:37,823 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:37] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 16:05:58,446 INFO [app] REQUEST: GET /api/users/getuserid/7 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:05:58,476 WARNING [middleware] AUTH FAILURE: Token expired | Path: /api/users/getuserid/7 | IP: 127.0.0.1
+2025-05-23 16:05:58,483 INFO [app] RESPONSE: GET /api/users/getuserid/7 | Status: 401 | User: None | Duration: 0.041s
+2025-05-23 16:05:58,485 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:58] "[31m[1mGET /api/users/getuserid/7 HTTP/1.1[0m" 401 -
+2025-05-23 16:05:58,543 INFO [app] REQUEST: GET /api/speaking_tests/testid/2 | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:05:58,554 INFO [app] RESPONSE: GET /api/speaking_tests/testid/2 | Status: 200 | User: None | Duration: 0.011s
+2025-05-23 16:05:58,566 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:58] "GET /api/speaking_tests/testid/2 HTTP/1.1" 200 -
+2025-05-23 16:05:58,728 INFO [app] REQUEST: GET /api/auth/profile | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:05:58,747 INFO [app] RESPONSE: GET /api/auth/profile | Status: 200 | User: 9 | Duration: 0.019s
+2025-05-23 16:05:58,751 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:58] "GET /api/auth/profile HTTP/1.1" 200 -
+2025-05-23 16:05:58,825 INFO [app] REQUEST: GET /api/users/list | User: None | IP: 127.0.0.1 | Args: {'page': '1', 'limit': '5'} | Body: None
+2025-05-23 16:05:58,836 INFO [app] RESPONSE: GET /api/users/list | Status: 200 | User: 9 | Duration: 0.011s
+2025-05-23 16:05:58,839 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:58] "GET /api/users/list?page=1&limit=5 HTTP/1.1" 200 -
+2025-05-23 16:05:58,924 INFO [app] REQUEST: GET /api/questions/get-questions-sync | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:05:58,941 INFO [app] RESPONSE: GET /api/questions/get-questions-sync | Status: 200 | User: None | Duration: 0.016s
+2025-05-23 16:05:58,944 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:58] "GET /api/questions/get-questions-sync HTTP/1.1" 200 -
+2025-05-23 16:05:59,059 INFO [app] REQUEST: GET /api/questions/get-questions-async | User: None | IP: 127.0.0.1 | Args: {} | Body: None
+2025-05-23 16:05:59,090 INFO [app] RESPONSE: GET /api/questions/get-questions-async | Status: 200 | User: None | Duration: 0.032s
+2025-05-23 16:05:59,093 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:59] "GET /api/questions/get-questions-async HTTP/1.1" 200 -
+2025-05-23 16:05:59,188 INFO [app] REQUEST: GET /api/questions/get-question-pages | User: None | IP: 127.0.0.1 | Args: {'page': '7', 'limit': '5'} | Body: None
+2025-05-23 16:05:59,234 INFO [app] RESPONSE: GET /api/questions/get-question-pages | Status: 200 | User: None | Duration: 0.047s
+2025-05-23 16:05:59,241 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:05:59] "GET /api/questions/get-question-pages?page=7&limit=5 HTTP/1.1" 200 -
+2025-05-23 16:05:59,351 INFO [app] REQUEST: POST /api/auth/login | User: None | IP: 127.0.0.1 | Args: {} | Body: {'email': 'arjun.sarkar2025@example.com', 'password': 'StrongPass#2025'}
+2025-05-23 16:06:00,124 INFO [auth] LOGIN SUCCESS: email=arjun.sarkar2025@example.com | user_id=9 | IP=127.0.0.1
+2025-05-23 16:06:00,126 INFO [app] RESPONSE: POST /api/auth/login | Status: 200 | User: None | Duration: 0.775s
+2025-05-23 16:06:00,129 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:06:00] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 16:06:00,220 INFO [app] REQUEST: POST /api/auth/register | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Arjun Sarkar', 'email': 'arjun.sarkar2025@example.com', 'phone': '9876543212', 'password': 'StrongPass#2025', 'role': 'admin'}
+2025-05-23 16:06:00,231 WARNING [auth] Registration failed: Duplicate email | email=arjun.sarkar2025@example.com
+2025-05-23 16:06:00,233 INFO [app] RESPONSE: POST /api/auth/register | Status: 409 | User: None | Duration: 0.013s
+2025-05-23 16:06:00,238 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:06:00] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2025-05-23 16:06:00,282 INFO [app] REQUEST: POST /api/speaking_tests/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'user_id': 1, 'test_date': '2025-04-10T14:30:00', 'score': 7, 'status': 'completed'}
+2025-05-23 16:06:00,312 INFO [app] RESPONSE: POST /api/speaking_tests/create | Status: 201 | User: None | Duration: 0.031s
+2025-05-23 16:06:00,315 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:06:00] "[35m[1mPOST /api/speaking_tests/create HTTP/1.1[0m" 201 -
+2025-05-23 16:06:00,390 INFO [app] REQUEST: POST /api/users/create | User: None | IP: 127.0.0.1 | Args: {} | Body: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388'}
+2025-05-23 16:06:00,423 ERROR [app] EXCEPTION: POST /api/users/create | User: None | Error: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) | Traceback: Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'password' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\routes\users.py", line 30, in create_user
+    db.session.commit()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Edubot\IELTS_Speaking_Test\venv\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'password' cannot be null")
+[SQL: INSERT INTO users (name, email, phone, password, `role`, created_at) VALUES (%(name)s, %(email)s, %(phone)s, %(password)s, %(role)s, %(created_at)s)]
+[parameters: {'name': 'Surya', 'email': 'suryacsp@proton.me', 'phone': '8842374388', 'password': None, 'role': 'test_taker', 'created_at': datetime.datetime(2025, 5, 23, 10, 2, 25, 657363, tzinfo=datetime.timezone.utc)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-05-23 16:06:00,431 INFO [app] RESPONSE: POST /api/users/create | Status: 500 | User: None | Duration: 0.041s
+2025-05-23 16:06:00,433 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:06:00] "[35m[1mPOST /api/users/create HTTP/1.1[0m" 500 -
+2025-05-23 16:06:00,485 INFO [app] REQUEST: POST /api/questions/generate-question | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topic': 'Solar flares'}
+2025-05-23 16:06:00,908 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:00,926 INFO [app] RESPONSE: POST /api/questions/generate-question | Status: 200 | User: 9 | Duration: 0.441s
+2025-05-23 16:06:00,927 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:06:00] "POST /api/questions/generate-question HTTP/1.1" 200 -
+2025-05-23 16:06:00,981 INFO [app] REQUEST: POST /api/questions/generate-questions | User: None | IP: 127.0.0.1 | Args: {} | Body: {'topics': ['Wearable Biosensors for Personal Health', 'Urban Heat Islands and Climate Adaptation', 'Smart Textiles in Sports Technology', 'Bioinformatics in Rare Disease Discovery', 'Microbial Fuel Cells for Clean Energy', 'Edge Computing in IoT Devices', 'Tactile Feedback in Robotic Surgery']}
+2025-05-23 16:06:01,211 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:01,522 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:01,769 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:02,077 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:02,445 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:02,871 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:03,177 INFO [_client] HTTP Request: POST https://ielts-speaking-test.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-05-23 16:06:03,188 INFO [app] RESPONSE: POST /api/questions/generate-questions | Status: 200 | User: 9 | Duration: 2.208s
+2025-05-23 16:06:03,190 INFO [_internal] 127.0.0.1 - - [23/May/2025 16:06:03] "POST /api/questions/generate-questions HTTP/1.1" 200 -

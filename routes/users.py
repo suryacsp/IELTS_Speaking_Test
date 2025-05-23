@@ -6,6 +6,9 @@ from middleware import token_required,require_role
 
 users_bp = Blueprint('users', __name__)
 
+# --------------------------
+# POST /api/users/create - Create a new user
+# --------------------------
 @users_bp.route('/create', methods=['POST'])
 def create_user():
     data = request.get_json() or {}
@@ -34,6 +37,10 @@ def create_user():
         'created_at': user.created_at.isoformat()
     }), 201
 
+# --------------------------
+# GET /api/users/list - List all users
+# --------------------------
+# This endpoint is protected and requires admin role
 @users_bp.route('/list', methods=['GET'])
 @token_required
 @require_role('admin')
@@ -60,6 +67,10 @@ def list_users():
         'page': pagination.page
     }), 200
 
+# --------------------------
+# GET /api/users/getuserid/<int:user_id> - Get user by ID
+# --------------------------
+# This endpoint is protected and requires admin role
 @users_bp.route('/getuserid/<int:user_id>', methods=['GET'])
 @token_required
 @require_role('admin')

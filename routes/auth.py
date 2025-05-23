@@ -10,6 +10,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 auth_bp = Blueprint('auth', __name__)
 
+# --------------------------
+# POST /api/auth/register - user registration
+# --------------------------
 @auth_bp.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
@@ -54,6 +57,9 @@ def register():
         }
     }), 201
 
+# --------------------------
+# POST /api/auth/login - user login
+# --------------------------
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -91,10 +97,13 @@ def generate_jwt(user_id, role):
         "role": role,
         "exp": datetime.now(timezone.utc) + timedelta(hours=1)  # Token expiration setting
     }
-    secret = os.getenv("JWT_SECRET_KEY")  # Use real env var in .env
+    secret = os.getenv("JWT_SECRET_KEY")  #check in .env 
     token = jwt.encode(payload, secret, algorithm="HS256")
     return token
 
+# --------------------------
+# GET /api/auth/profile - get user profile
+# --------------------------
 @auth_bp.route('/profile', methods=['GET'])
 @token_required
 def get_profile():

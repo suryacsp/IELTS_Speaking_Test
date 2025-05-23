@@ -4,9 +4,10 @@ import logging
 from functools import wraps
 from flask import request, jsonify, g
 
-# Ensure logger is initialized elsewhere (e.g., in app.py or config.py)
+# Ensure logger is initialized elsewhere
 logger = logging.getLogger(__name__)
 
+#User authentication and routes protection
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -35,6 +36,7 @@ def token_required(f):
         return f(*args, **kwargs)
     return decorated
 
+#Enabling RBAC
 def require_role(required_role):
     def decorator(f):
         @wraps(f)

@@ -5,6 +5,9 @@ from models import db, SpeakingTest, User
 
 speaking_tests_bp = Blueprint('speaking_tests', __name__)
 
+# --------------------------
+#POST /create_speaking_test
+# --------------------------
 @speaking_tests_bp.route('/create', methods=['POST'])
 def create_speaking_test():
     data = request.get_json() or {}
@@ -37,6 +40,9 @@ def create_speaking_test():
         'created_at': test.created_at.isoformat()
     }), 201
 
+# --------------------------
+#GET /speaking_test/testid/<int:test_id>
+# --------------------------
 @speaking_tests_bp.route('/testid/<int:test_id>', methods=['GET'])
 def get_speaking_test(test_id):
     test = SpeakingTest.query.get(test_id)

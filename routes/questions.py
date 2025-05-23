@@ -33,7 +33,6 @@ def get_mock_questions_sync():
     })
 
 
-
 # --------------------------
 # GET /api/questions (async)
 # --------------------------
@@ -92,8 +91,9 @@ def fetch_question_pages_from_db(page, limit):
 
 
 # --------------------------
-# POST /api/generate-question 
+# POST /api/generate-question - Generate a question
 # --------------------------
+# This endpoint is protected and requires admin role
 @questions_bp.route('/generate-question', methods=['POST'])
 @token_required
 @require_role('admin')
@@ -109,7 +109,7 @@ def generate_question():
             model="gpt-35-turbo",
             messages=[
                 {"role": "system", "content": "You are an IELTS speaking examiner."},
-                {"role": "user", "content": f"Generate a speaking test question about: {topic}"}
+                {"role": "user", "content": f"Generate a speaking test question about: {topic}. Respond with ONLY the question, no introduction or explanations."}
             ],
             max_tokens=200,
             temperature=0.7
@@ -127,7 +127,11 @@ def generate_question():
 
     except Exception as e:
         return jsonify({"error": "Azure OpenAI call failed", "details": str(e)}), 500
-    
+
+# --------------------------
+# POST /api/generate-questions - Generate multiple questions
+# --------------------------
+# This endpoint is protected and requires admin role    
 @questions_bp.route('/generate-questions', methods=['POST'])
 @token_required
 @require_role('admin')
@@ -147,7 +151,7 @@ def generate_questions():
                 model="gpt-35-turbo",
                 messages=[
                     {"role": "system", "content": "You are an IELTS speaking examiner."},
-                    {"role": "user", "content": f"Generate a speaking test question about: {topic}"}
+                    {"role": "user", "content": f"Generate a speaking test question about: {topic}. Respond with ONLY the question, no introduction or explanations."}
                 ],
                 max_tokens=200,
                 temperature=0.7
