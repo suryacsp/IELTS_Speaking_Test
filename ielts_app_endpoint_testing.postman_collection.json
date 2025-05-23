@@ -1,0 +1,1457 @@
+{
+	"info": {
+		"_postman_id": "08d5c81d-dee7-40ae-8e31-8a6d779b8228",
+		"name": "ielts_app_endpoint_testing",
+		"description": "This collection test routes implemented as part of assignments from 5 ,7 and 10 training modules",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43895642",
+		"_collection_link": "https://suryaprakash-4056297.postman.co/workspace/surya-prakash's-Workspace~0710b58f-41c3-4944-8ea3-2c7a173beca7/collection/43895642-08d5c81d-dee7-40ae-8e31-8a6d779b8228?action=share&source=collection_link&creator=43895642"
+	},
+	"item": [
+		{
+			"name": "user_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDgwMDAxMzd9.4HlmVG1xOFzdztKE3hOwb6zqa6g67V-DE1M7kNefOW0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/users/getuserid/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"getuserid",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('created_at');",
+							"    pm.expect(responseData).to.have.property('id');",
+							"    pm.expect(responseData).to.have.property('score');",
+							"    pm.expect(responseData).to.have.property('status');",
+							"    pm.expect(responseData).to.have.property('test_date');",
+							"    pm.expect(responseData).to.have.property('user_id');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Verify that created_at is in a valid date format\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData.created_at).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z$/);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Score should be a non-negative integer\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData.score).to.be.a('number');",
+							"  pm.expect(responseData.score).to.be.at.least(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/speaking_tests/testid/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"speaking_tests",
+						"testid",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.include.all.keys('created_at', 'email', 'id', 'name', 'phone', 'role');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Email is in a valid format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.email).to.be.a('string');",
+							"    pm.expect(responseData.email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Phone is in a valid format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.phone).to.match(/^\\d{3}-\\d{3}-\\d{4}$/);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDc5OTczOTB9.gHAzPV2mwZKB5RAfwC6VS3kJKVNMWCc4hXwBgdTe4mU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/auth/profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "profile_fetched",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/auth/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 12:37:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "166"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"created_at\": \"2025-05-23T09:43:34\",\n    \"email\": \"arjun.sarkar2025@example.com\",\n    \"id\": 9,\n    \"name\": \"Arjun Sarkar\",\n    \"phone\": \"9876543212\",\n    \"role\": \"admin\"\n}"
+				}
+			]
+		},
+		{
+			"name": "users_list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response Content-Type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response includes page, pages, and total fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.include.all.keys('page', 'pages', 'total');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Users array is present and not empty\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.users).to.exist.and.to.be.an('array').and.to.have.lengthOf.at.least(1, \"Users array should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate the user object properties\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.users).to.be.an('array');",
+							"  ",
+							"  responseData.users.forEach(function(user) {",
+							"    pm.expect(user).to.have.property('id').that.is.a('number');",
+							"    pm.expect(user).to.have.property('name').that.is.a('string');",
+							"    pm.expect(user).to.have.property('email').that.is.a('string');",
+							"    pm.expect(user).to.have.property('phone').that.is.a('string');",
+							"    pm.expect(user).to.have.property('created_at').that.is.a('string');",
+							"  });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Phone is in a valid format\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData.users).to.be.an('array');",
+							"  responseData.users.forEach(function(user) {",
+							"    pm.expect(user.phone).to.match(/^\\d{3}-\\d{3}-\\d{4}$/);",
+							"  });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDc5OTczOTB9.gHAzPV2mwZKB5RAfwC6VS3kJKVNMWCc4hXwBgdTe4mU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/users/list?page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fetched_users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users/list?page=2&limit=5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 12:40:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "908"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"page\": 2,\n    \"pages\": 2,\n    \"total\": 10,\n    \"users\": [\n        {\n            \"created_at\": \"2025-05-20T12:19:21\",\n            \"email\": \"surya.p@example.in\",\n            \"id\": 6,\n            \"name\": \"Surya Prakash\",\n            \"phone\": \"7788991122\"\n        },\n        {\n            \"created_at\": \"2025-05-21T05:45:18\",\n            \"email\": \"jay.kumar@taketest.in\",\n            \"id\": 7,\n            \"name\": \"Jay Kumar\",\n            \"phone\": \"7788992233\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:18:04\",\n            \"email\": \"meera@example.in\",\n            \"id\": 8,\n            \"name\": \"Meera Nair\",\n            \"phone\": \"7899874321\"\n        },\n        {\n            \"created_at\": \"2025-05-23T09:43:34\",\n            \"email\": \"arjun.sarkar2025@example.com\",\n            \"id\": 9,\n            \"name\": \"Arjun Sarkar\",\n            \"phone\": \"9876543212\"\n        },\n        {\n            \"created_at\": \"2025-05-23T11:13:06\",\n            \"email\": \"priya.verma2025@example.com\",\n            \"id\": 10,\n            \"name\": \"Priya Verma\",\n            \"phone\": \"9123456789\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get_questions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is application/json\", function () {",
+							"  pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Questions array in the response should be an array of objects\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.questions).to.be.an('array').and.to.not.be.empty;",
+							"    responseData.questions.forEach(function(question) {",
+							"        pm.expect(question).to.be.an('object');",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate the fields within the questions array\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.questions).to.be.an('array').that.is.not.empty;",
+							"    ",
+							"    responseData.questions.forEach(function(question) {",
+							"        pm.expect(question.created_at).to.be.a('string');",
+							"        pm.expect(question.id).to.be.a('number');",
+							"        pm.expect(question.question).to.be.a('string');",
+							"        pm.expect(question.topic).to.be.a('string');",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Created_at field is in a valid date format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.questions).to.be.an('array');",
+							"    responseData.questions.forEach(function(question) {",
+							"        pm.expect(question.created_at).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z$/);",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/questions/get-questions-sync",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"questions",
+						"get-questions-sync"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions-async",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    responseData.questions.forEach(function(question) {",
+							"        pm.expect(question.created_at).to.exist;",
+							"        pm.expect(question.id).to.exist;",
+							"        pm.expect(question.question).to.exist;",
+							"        pm.expect(question.topic).to.exist;",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Questions array is present and contains expected number of elements\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.questions).to.exist.and.to.be.an('array');",
+							"    pm.expect(responseData.questions).to.have.lengthOf(1);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Created_at is in a valid date format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    responseData.questions.forEach(function(question) {",
+							"        pm.expect(question.created_at).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z$/);",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is 'application/json'\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/questions/get-questions-async",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"questions",
+						"get-questions-async"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "questions-async",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/questions/get-questions-async",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"questions",
+								"get-questions-async"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 11:19:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33222"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questions\": [\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 95,\n            \"question\": \"How do you think edge computing enhances the functionality of IoT devices?\",\n            \"topic\": \"Edge Computing in IoT Devices\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 94,\n            \"question\": \"Do you think microbial fuel cells have the potential to be a sustainable source of clean energy in the future?\",\n            \"topic\": \"Microbial Fuel Cells for Clean Energy\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 93,\n            \"question\": \"Do you think bioinformatics plays a crucial role in the discovery of rare diseases? Why or why not?\",\n            \"topic\": \"Bioinformatics in Rare Disease Discovery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 92,\n            \"question\": \"How do you think smart textiles are revolutionizing sports technology and performance?\",\n            \"topic\": \"Smart Textiles in Sports Technology\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 91,\n            \"question\": \"How can cities adapt to mitigate the effects of urban heat islands and promote climate resilience?\",\n            \"topic\": \"Urban Heat Islands and Climate Adaptation\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 90,\n            \"question\": \"In what ways do you think wearable biosensors can benefit personal health management?\",\n            \"topic\": \"Wearable Biosensors for Personal Health\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 89,\n            \"question\": \"Do you think solar flares have a significant impact on Earth and its technology?\",\n            \"topic\": \"Solar flares\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 88,\n            \"question\": \"Do you think tactile feedback is important in robotic surgery? Why or why not?\",\n            \"topic\": \"Tactile Feedback in Robotic Surgery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 87,\n            \"question\": \"How do you think edge computing can enhance the functionality and efficiency of IoT devices?\",\n            \"topic\": \"Edge Computing in IoT Devices\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 85,\n            \"question\": \"How can bioinformatics be used to discover rare diseases?\",\n            \"topic\": \"Bioinformatics in Rare Disease Discovery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 86,\n            \"question\": \"Do you think microbial fuel cells could be a sustainable solution for clean energy production in the future?\",\n            \"topic\": \"Microbial Fuel Cells for Clean Energy\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 84,\n            \"question\": \"How do you think smart textiles are revolutionizing sports technology and performance?\",\n            \"topic\": \"Smart Textiles in Sports Technology\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 83,\n            \"question\": \"How can urban areas adapt to the challenges posed by urban heat islands in order to mitigate their impact on climate change?\",\n            \"topic\": \"Urban Heat Islands and Climate Adaptation\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 82,\n            \"question\": \"How do you think wearable biosensors can benefit personal health monitoring in everyday life?\",\n            \"topic\": \"Wearable Biosensors for Personal Health\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 81,\n            \"question\": \"What impact do you think solar flares can have on Earth's technology and communication systems?\",\n            \"topic\": \"Solar flares\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 80,\n            \"question\": \"How important do you think tactile feedback is in robotic surgery?\",\n            \"topic\": \"Tactile Feedback in Robotic Surgery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 79,\n            \"question\": \"Do you think edge computing is essential for improving the performance of IoT devices?\",\n            \"topic\": \"Edge Computing in IoT Devices\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 78,\n            \"question\": \"Do you think microbial fuel cells have the potential to become a major source of clean energy in the future?\",\n            \"topic\": \"Microbial Fuel Cells for Clean Energy\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 77,\n            \"question\": \"What role does bioinformatics play in the discovery of rare diseases?\",\n            \"topic\": \"Bioinformatics in Rare Disease Discovery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 76,\n            \"question\": \"How do you think smart textiles are revolutionizing sports technology and performance?\",\n            \"topic\": \"Smart Textiles in Sports Technology\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 75,\n            \"question\": \"How can cities adapt to the impacts of urban heat islands in order to mitigate their effects on climate change?\",\n            \"topic\": \"Urban Heat Islands and Climate Adaptation\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 74,\n            \"question\": \"How do you think wearable biosensors can benefit individuals in monitoring their personal health?\",\n            \"topic\": \"Wearable Biosensors for Personal Health\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 73,\n            \"question\": \"How do solar flares impact communication systems on Earth?\",\n            \"topic\": \"Solar flares\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 72,\n            \"question\": \"Do you think tactile feedback is important in robotic surgery? Why or why not?\",\n            \"topic\": \"Tactile Feedback in Robotic Surgery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 71,\n            \"question\": \"How do you think edge computing can benefit IoT devices?\",\n            \"topic\": \"Edge Computing in IoT Devices\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 70,\n            \"question\": \"How do you think microbial fuel cells could contribute to the production of clean energy in the future?\",\n            \"topic\": \"Microbial Fuel Cells for Clean Energy\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 69,\n            \"question\": \"How can bioinformatics be used in the discovery of rare diseases?\",\n            \"topic\": \"Bioinformatics in Rare Disease Discovery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 68,\n            \"question\": \"Do you think the use of smart textiles in sports technology has revolutionized the way athletes train and perform?\",\n            \"topic\": \"Smart Textiles in Sports Technology\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 67,\n            \"question\": \"How can cities adapt to mitigate the impacts of Urban Heat Islands and promote climate resilience?\",\n            \"topic\": \"Urban Heat Islands and Climate Adaptation\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 66,\n            \"question\": \"How do you think wearable biosensors can benefit individuals in monitoring their personal health?\",\n            \"topic\": \"Wearable Biosensors for Personal Health\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 65,\n            \"question\": \"Do you think solar flares could pose a threat to Earth in the future? Why or why not?\",\n            \"topic\": \"Solar flares\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 53,\n            \"question\": \"How do you think edge computing can benefit IoT devices in terms of data processing and efficiency?\",\n            \"topic\": \"Edge Computing in IoT Devices\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 52,\n            \"question\": \"What are the potential benefits of using microbial fuel cells as a source of clean energy?\",\n            \"topic\": \"Microbial Fuel Cells for Clean Energy\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 54,\n            \"question\": \"How do you think the integration of tactile feedback in robotic surgery can improve surgical outcomes and patient safety?\",\n            \"topic\": \"Tactile Feedback in Robotic Surgery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 51,\n            \"question\": \"How can bioinformatics be utilized in the discovery of rare diseases?\",\n            \"topic\": \"Bioinformatics in Rare Disease Discovery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 50,\n            \"question\": \"How do you think smart textiles are revolutionizing sports technology?\",\n            \"topic\": \"Smart Textiles in Sports Technology\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 49,\n            \"question\": \"How can cities implement strategies to mitigate the effects of urban heat islands and adapt to climate change?\",\n            \"topic\": \"Urban Heat Islands and Climate Adaptation\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 48,\n            \"question\": \"Do you think wearable biosensors are effective tools for monitoring personal health? Why or why not?\",\n            \"topic\": \"Wearable Biosensors for Personal Health\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 96,\n            \"question\": \"Do you think the use of tactile feedback in robotic surgery can improve the accuracy and precision of surgical procedures?\",\n            \"topic\": \"Tactile Feedback in Robotic Surgery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:00:12\",\n            \"id\": 47,\n            \"question\": \"What potential impact do solar flares have on our planet?\",\n            \"topic\": \"Solar flares\"\n        },\n        {\n            \"created_at\": \"2025-05-23T09:43:34\",\n            \"id\": 46,\n            \"question\": \"Sure, here is a speaking test question related to Crypto Mining:\\n\\n\\\"What are your thoughts on the growing trend of crypto mining and its impact on the environment?\\\"\",\n            \"topic\": \"Crypto Mining\"\n        },\n        {\n            \"created_at\": \"2025-05-21T11:57:31\",\n            \"id\": 42,\n            \"question\": \"Sure! Here is a speaking test question related to the role of statistics in research:\\n\\n\\\"Can you discuss the importance of statistics in research and how it helps researchers in drawing meaningful conclusions from their data?\\\"\",\n            \"topic\": \"The Role of Statistics in Research\"\n        },\n        {\n            \"created_at\": \"2025-05-21T11:57:31\",\n            \"id\": 43,\n            \"question\": \"Sure! Here is a speaking test question related to the topic of Virtual Reality in Education:\\n\\n\\\"Many schools and universities are starting to incorporate virtual reality technology into their teaching methods. Do you think virtual reality can enhance the learning experience of students? Why or why not?\\\"\",\n            \"topic\": \"Virtual Reality in Education\"\n        },\n        {\n            \"created_at\": \"2025-05-21T11:57:31\",\n            \"id\": 44,\n            \"question\": \"Certainly! Here is a speaking test question related to 3D printing in modern manufacturing:\\n\\n\\\"Many companies are now using 3D printing technology in their manufacturing processes. What do you think are the advantages and disadvantages of incorporating 3D printing into modern manufacturing practices?\\\"\",\n            \"topic\": \"3D Printing in Modern Manufacturing\"\n        },\n        {\n            \"created_at\": \"2025-05-21T11:57:31\",\n            \"id\": 45,\n            \"question\": \"Sure! Here is a speaking test question related to cyber crime:\\n\\nWhat impact do you think cyber crime has on individuals and society, and what measures do you think can be taken to prevent it?\",\n            \"topic\": \"cyber crime\"\n        },\n        {\n            \"created_at\": \"2025-05-21T11:57:31\",\n            \"id\": 41,\n            \"question\": \"Can you explain what quantum computing is and discuss its potential impact on technology and society in the future?\",\n            \"topic\": \"Quantum Computing\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 39,\n            \"question\": \"Describe a significant benefit that you think space exploration has brought to society.\",\n            \"topic\": \"Space Exploration and Its Benefits\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 38,\n            \"question\": \"Sure! Here is a speaking test question related to the impact of data science on society:\\n\\n\\\"How do you think the advancements in data science have influenced various aspects of society, such as healthcare, education, and business? Can you provide examples to support your answer?\\\"\",\n            \"topic\": \"The Impact of Data Science on Society\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 37,\n            \"question\": \"Sure! Here's a speaking test question related to Robotics and Automation:\\n\\n\\\"Many industries are increasingly turning to robotics and automation to improve efficiency and productivity. What do you think are the advantages and disadvantages of this trend in terms of the workforce and society as a whole?\\\"\",\n            \"topic\": \"Robotics and Automation\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 36,\n            \"question\": \"Sure! Here is a speaking test question related to renewable energy solutions:\\n\\n\\\"Many countries are increasingly turning to renewable energy sources to meet their energy needs. What do you think are the advantages and disadvantages of utilizing renewable energy solutions, such as solar power or wind power, on a large scale?\\\"\",\n            \"topic\": \"Renewable Energy Solutions\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 35,\n            \"question\": \"Sure! Here is a speaking test question for you:\\n\\n\\\"In today's digital age, cybersecurity is becoming increasingly important. What do you think are the main reasons why individuals and organizations should prioritize cybersecurity measures? Can you provide some examples of the potential risks of not having strong cybersecurity in place?\\\"\",\n            \"topic\": \"The Importance of Cybersecurity\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 33,\n            \"question\": \"Sure! Here is a speaking test question related to the role of mathematics in engineering:\\n\\n\\\"Can you explain the importance of mathematics in the field of engineering? How do engineers use mathematical concepts and principles to solve real-world problems and design innovative solutions?\\\"\",\n            \"topic\": \"The Role of Mathematics in Engineering\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 32,\n            \"question\": \"Sure! Here is a speaking test question for you:\\n\\n\\\"In what ways do you think artificial intelligence has influenced or impacted everyday life, and do you believe these influences are mostly positive or negative?\\\"\",\n            \"topic\": \"Artificial Intelligence in Everyday Life\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 34,\n            \"question\": \"Sure! Here is a speaking test question related to recent advances in biotechnology:\\n\\nDescribe a recent development in biotechnology that you find particularly interesting. How do you think this advancement will impact society in the future?\",\n            \"topic\": \"Recent Advances in Biotechnology\"\n        },\n        {\n            \"created_at\": \"2025-05-21T09:12:39\",\n            \"id\": 40,\n            \"question\": \"Sure! Here is a speaking test question related to the topic of \\\"The Future of Medical Technology\\\":\\n\\n\\\"Describe how you think advancements in medical technology will impact healthcare in the future. Do you believe this will lead to better health outcomes for individuals worldwide? Why or why not?\\\"\",\n            \"topic\": \"The Future of Medical Technology\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:16:35\",\n            \"id\": 31,\n            \"question\": \"Do you think that fashion trends among aliens would be similar or different to those on Earth? Why or why not?\",\n            \"topic\": \"Fashion Trends Among Aliens\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:16:35\",\n            \"id\": 30,\n            \"question\": \"Describe your opinion on the philosophy of waiting in long queues. Do you believe it is a valuable experience that teaches patience and resilience, or do you think it is an unnecessary inconvenience in today's fast-paced world? Give reasons to support your answer.\",\n            \"topic\": \"Philosophy of Waiting in Long Queues\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:16:35\",\n            \"id\": 29,\n            \"question\": \"Describe a time when you discovered a missing sock and tried to uncover its secret life. How did you feel when you found out where it had been hiding all along?\",\n            \"topic\": \"The Secret Lives of Lost Socks\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:16:35\",\n            \"id\": 28,\n            \"question\": \"Sure! Here is a speaking test question on the topic: How Smells Influence Architecture\\n\\nQuestion: In what ways do you think smells can influence the design and architecture of a building or space? Can you provide examples to support your answer?\",\n            \"topic\": \"How Smells Influence Architecture\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:16:35\",\n            \"id\": 27,\n            \"question\": \"Can you talk about any life lessons you have learned from imaginary friends or characters from books, movies, or TV shows? How have these imaginary friends influenced your perspective on life or helped you navigate challenges?\",\n            \"topic\": \"Life Lessons from Imaginary Friends\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:16:35\",\n            \"id\": 26,\n            \"question\": \"Do you think the concept of wishing wells has any economic significance? Explain your opinion and discuss how wishing wells may impact the local economy in a community.\",\n            \"topic\": \"The Economics of Wishing Wells\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:16:35\",\n            \"id\": 25,\n            \"question\": \"Describe a city from Italo Calvino's \\\"Invisible Cities\\\" and its inhabitants. How do the characteristics of the city reflect the personalities or behaviors of its inhabitants?\",\n            \"topic\": \"Invisible Cities and Their Inhabitants\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:04:20\",\n            \"id\": 24,\n            \"question\": \"Sure! Here is a speaking test question related to deep sea exploration:\\n\\n\\\"Many scientists believe that deep sea exploration is crucial for understanding our planet better. What do you think are the benefits of exploring the deep sea, and how important do you think this type of exploration is for the future of our planet?\\\"\",\n            \"topic\": \"Deep Sea exploration\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:04:20\",\n            \"id\": 23,\n            \"question\": \"Sure! Here is a speaking test question about the winter season:\\n\\n\\\"Can you describe how the winter season is celebrated in your country? Do people engage in any special activities or traditions during this time?\\\"\",\n            \"topic\": \"Winter season\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:04:20\",\n            \"id\": 22,\n            \"question\": \"Sure! Here is a speaking test question related to hiking:\\n\\nDescribe a memorable hiking experience you have had. Where did you go, who did you go with, and what made it memorable for you?\",\n            \"topic\": \"Hiking\"\n        },\n        {\n            \"created_at\": \"2025-05-21T07:04:20\",\n            \"id\": 21,\n            \"question\": \"Do you think nuclear weapons should be completely eliminated worldwide? Why or why not?\",\n            \"topic\": \"Nuclear Weapons\"\n        },\n        {\n            \"created_at\": \"2025-05-20T06:59:28\",\n            \"id\": 20,\n            \"question\": \"Do you think human gene editing should be allowed for medical purposes? Why or why not?\",\n            \"topic\": \"Human Gene Editing\"\n        },\n        {\n            \"created_at\": \"2025-05-19T12:24:13\",\n            \"id\": 19,\n            \"question\": \"Sure! Here is a speaking test question related to Digital Forensics:\\n\\n\\\"Can you explain how digital forensics is used in investigating cybercrimes, and why it is important in the field of cybersecurity?\\\"\",\n            \"topic\": \"Digital Forensics\"\n        },\n        {\n            \"created_at\": \"2025-05-19T12:08:53\",\n            \"id\": 18,\n            \"question\": \"Sure! Here is a speaking test question related to biodiversity:\\n\\n\\\"What role do you think individuals and governments should play in protecting biodiversity? Please provide reasons and examples to support your opinion.\\\"\",\n            \"topic\": \"Biodiversity\"\n        },\n        {\n            \"created_at\": \"2025-05-15T13:00:00\",\n            \"id\": 17,\n            \"question\": \"Here's a speaking test question about work-life balance:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a time when you had to balance your work and personal life.**\\n\\nYou will have 1 minute to prepare and take notes. You will then have 1-2 minutes to speak on this topic. \\n\\n**Some example points to consider:**\\n\\n* What kind of work or study were you doing at the time?\\n* What were your personal commitments or responsibilities?\\n* How did you manage to balance your work and personal life?\\n* Was it difficult for you to achieve a balance? Why or why not?\\n\\n**Part 3: Follow-up Questions**\\n\\nIf the candidate finishes their 1-2 minutes of speaking, you can ask some follow-up questions,\",\n            \"topic\": \"Work-Life Balance\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:59:59\",\n            \"id\": 16,\n            \"question\": \"Here's a potential IELTS speaking test question on the topic of History and Heritage:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a historical place or monument in your country that is important to you.**\\n\\nYou have 1 minute to prepare and 1-2 minutes to speak. \\n\\n**You should say:**\\n\\n* where this place is located\\n* what its historical significance is\\n* how it is preserved or maintained\\n* and explain why it is important to you\\n\\nYou can start preparing now. Please make notes on the cue card provided.\\n\\n**Part 3: Follow-up Questions**\\n\\nSome potential follow-up questions for Part 3:\\n\\n* How do you think historical places like this one contribute to a country's identity?\\n* Do you think it's more\",\n            \"topic\": \"History and Heritage\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:59:59\",\n            \"id\": 15,\n            \"question\": \"Here's a potential IELTS speaking test question on the topic of Technology and Innovation:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a new technology that you think will change the way we live or work in the future.**\\n\\nYou should say:\\n\\n* what the technology is\\n* how it works\\n* what benefits it may bring\\n* and explain why you think it will have a significant impact\\n\\nYou have 1 minute to prepare and 1-2 minutes to speak. \\n\\n**Sample follow-up questions for Part 3:**\\n\\n* Do you think this technology will be accessible to everyone, or only to those who can afford it?\\n* How do you think governments and companies should regulate new technologies to ensure they benefit society?\\n* Can you give an\",\n            \"topic\": \"Technology and Innovation\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:59:59\",\n            \"id\": 14,\n            \"question\": \"Here's a potential IELTS speaking test question on the topic of consumerism:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a shopping habit that you or someone you know has.**\\n\\nYou should say:\\n\\n* who has this shopping habit\\n* what they buy\\n* how often they shop\\n* and explain why you think they have this habit\\n\\n**Part 3: Follow-up Discussion**\\n\\n**Questions:**\\n\\n1. Do you think people in your country are becoming more or less materialistic compared to the past?\\n2. How do advertisements influence people's purchasing decisions, in your opinion?\\n3. What are some potential negative effects of consumerism on individuals and society as a whole?\\n4. Can you think of any alternatives to the traditional shopping model, such\",\n            \"topic\": \"Consumerism\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:59:59\",\n            \"id\": 13,\n            \"question\": \"Here is a speaking test question about Media and Advertising:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a memorable advertisement that you have seen or heard recently.**\\n\\n**You should say:**\\n\\n* what the advertisement was for\\n* where and when you saw or heard it\\n* what made it memorable to you\\n* and explain why you think it was effective or not.\\n\\n**Part 3: Follow-up Questions**\\n\\n* Do you think advertising has a positive or negative impact on society? Why?\\n* How do you think the rise of social media has changed the way companies advertise?\\n* Can you think of a time when an advertisement influenced your purchasing decision? What made it so persuasive?\\n* Some people argue that there are too many advertisements on television and\",\n            \"topic\": \"Media and Advertising\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:59:59\",\n            \"id\": 12,\n            \"question\": \"Here's a speaking test question about Family and Relationships:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a person in your family who you admire.**\\n\\nYou should say:\\n\\n* who this person is\\n* what qualities you admire about them\\n* what kind of things they do that inspire you\\n* and explain why this person is so important to you.\\n\\nYou have 1-2 minutes to prepare and 1-2 minutes to speak.\\n\\n**Part 3: Follow-up Questions**\\n\\n* How do you think family relationships will change in the future?\\n* What role do you think grandparents play in a family?\\n* How often do you keep in touch with your relatives who live far away?\\n* What are some ways to show appreciation and gratitude to family\",\n            \"topic\": \"Family and Relationships\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:59:59\",\n            \"id\": 11,\n            \"question\": \"Here's a potential IELTS speaking test question about globalization:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a positive impact of globalization**\\n\\nYou have 1 minute to prepare and 1-2 minutes to speak. \\n\\n**Cue Card:**\\n\\n* Describe a positive impact of globalization\\n* Explain how it has affected people or countries\\n* Give an example to support your answer\\n* Say why you think this impact is significant\\n\\n**No preparation time for Part 3, conversation will start immediately after Part 2**\\n\\nAnd here's a potential follow-up question for Part 3:\\n\\n**Part 3: Discussion**\\n\\n* Some people argue that globalization has led to the loss of traditional cultures. Do you agree or disagree?\\n* Can you think of any\",\n            \"topic\": \"Globalization\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:46:09\",\n            \"id\": 10,\n            \"question\": \"Here's a potential IELTS speaking test question about social media:\\n\\n**Part 2: Cue Card**\\n\\n**Topic: A Social Media Platform**\\n\\n**Instructions:** \\n\\nDescribe a social media platform that you use regularly. \\n\\nYou should say:\\n\\n* what the platform is\\n* how often you use it\\n* what you like or dislike about it\\n* and explain how it has affected your life\\n\\nYou have one minute to prepare and can make notes if you wish. \\n\\n**Start your talk when you are ready.**\\n\\n(after the candidate finishes)\\n\\n**Part 3: Follow-up Questions**\\n\\n**Social Media and Communication**\\n\\n* Do you think social media has changed the way people communicate? How?\\n* Can you compare face-to-face communication with online communication\",\n            \"topic\": \"Social Media\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:46:09\",\n            \"id\": 9,\n            \"question\": \"Here is a speaking test question about sports:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a sport that you enjoy watching or playing.**\\n\\n**You should say:**\\n\\n* what the sport is\\n* how often you watch or play it\\n* what you like about it\\n* and explain why you enjoy it.\\n\\n**Part 3: Follow-up Questions**\\n\\n* What do you think are the benefits of playing sports for young people?\\n* Do you think sports should be a compulsory part of school curricula?\\n* How do you think sports can bring people together in a community?\\n* What changes have you noticed in the way people participate in sports over the years?\\n\\nNow, let's conduct a mock speaking test. I'll play the role of the examiner,\",\n            \"topic\": \"Sports\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:46:09\",\n            \"id\": 8,\n            \"question\": \"Here's a speaking test question about culture:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a traditional festival or celebration in your country**\\n\\nYou should say:\\n\\n* what the festival/celebration is\\n* when it is celebrated\\n* what people do during the festival/celebration\\n* and explain its importance to your culture\\n\\nYou have one minute to prepare and take notes before you start speaking. \\n\\n**Part 3: Follow-up Questions**\\n\\n**Discussion Questions:**\\n\\n1. How do traditional festivals and celebrations contribute to a country's cultural identity?\\n2. In what ways have modern festivals and celebrations been influenced by globalization and technology?\\n3. Do you think cultural traditions and customs are still relevant in today's fast-paced, modern world? Why or\",\n            \"topic\": \"Culture\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:46:09\",\n            \"id\": 7,\n            \"question\": \"Here's a sample IELTS speaking test question on the topic of public transport:\\n\\n**Part 1 Question**\\n\\n\\\"Can you tell me about the public transportation system in your hometown? What kinds of transportation are available, and how do you usually get around?\\\"\\n\\n**or**\\n\\n**Part 2 Task Card**\\n\\n\\\"Describe a time when you used public transportation. \\n\\nYou should say:\\n- where you were going\\n- what type of public transportation you used\\n- how you felt about the experience\\n- and explain why you chose to use public transportation\\n\\nYou have one minute to prepare and you can make notes if you wish. Then you will have one to one and a half minutes to speak.\\\"\\n\\n**or**\\n\\n**Part 3 Discussion Questions**\\n\\n\\\"\",\n            \"topic\": \"Public Transport\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:46:08\",\n            \"id\": 6,\n            \"question\": \"Here's a speaking test question about education:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a subject that you did not enjoy learning at school.**\\n\\nYou should say:\\n\\n* what the subject was\\n* why you did not enjoy learning it\\n* did you have to learn this subject as part of your course or was it optional \\n* and explain what you think about this subject now.\\n\\nYou have one minute to prepare and you can make notes if you wish. Then you will have one to two minutes to speak.\\n\\nAre you ready to start?\",\n            \"topic\": \"Education\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:46:08\",\n            \"id\": 5,\n            \"question\": \"Here's a speaking test question about food:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a food that you particularly enjoy eating.**\\n\\nYou should say:\\n\\n* what the food is\\n* how often you eat it\\n* where you usually have it\\n* and explain why you enjoy eating it so much.\\n\\nYou have one minute to prepare and take notes. Then, you will have to speak about it for 1-2 minutes.\\n\\nAre you ready to start?\",\n            \"topic\": \"Food\"\n        },\n        {\n            \"created_at\": \"2025-05-15T12:46:08\",\n            \"id\": 4,\n            \"question\": \"Here's a speaking test question about travel:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a place you visited that was full of people.**\\n\\nYou should say:\\n\\n* where you went\\n* when you went there\\n* what you did there\\n* and explain why you think it was so crowded.\\n\\nYou have one minute to prepare and take notes before you start speaking. You can start now.\\n\\n**[1 minute preparation time]**\\n\\n**Now, please begin speaking.**\",\n            \"topic\": \"Travel\"\n        },\n        {\n            \"created_at\": \"2025-05-15T11:54:06\",\n            \"id\": 3,\n            \"question\": \"Here's a potential IELTS speaking test question on the topic of geopolitics and globalization:\\n\\n**Part 2: Long Turn**\\n\\n**Card Topic:** Geopolitics and Globalisation\\n\\n**Question:** \\n\\nDescribe a recent example of how globalisation has influenced the geopolitical relationships between countries. \\n\\nYou should say:\\n\\n* where the example is from\\n* what the specific issue or event was\\n* how different countries or governments responded\\n* and explain what impact you think this will have on global politics in the future.\\n\\nYou have 1-2 minutes to prepare and 1-2 minutes to speak. \\n\\n**Sample Follow-up Questions for Part 3:**\\n\\n1. Do you think globalisation has made countries more or less dependent on each other?\\n2\",\n            \"topic\": \"Geopolitics and Globalisation\"\n        },\n        {\n            \"created_at\": \"2025-05-15T11:24:42\",\n            \"id\": 2,\n            \"question\": \"Here's a potential IELTS speaking test question:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a type of technology that you think will change the way we learn in the future.**\\n\\n**You should say:**\\n\\n* what type of technology it is\\n* how it is currently being used or developed\\n* what benefits it might bring to education\\n* and explain how you think it will change the way we learn in the future.\\n\\n**Part 3: Follow-up Questions**\\n\\n**Future of EdTech Companies**\\n\\n1. Do you think EdTech companies will replace traditional schools in the future? Why or why not?\\n2. What role do you think artificial intelligence will play in the development of EdTech?\\n3. How do you think EdTech companies can\",\n            \"topic\": \"Future of EdTech Companies\"\n        },\n        {\n            \"created_at\": \"2025-05-15T11:23:41\",\n            \"id\": 1,\n            \"question\": \"Here's a speaking test question about summer vacation:\\n\\n**Part 2: Cue Card**\\n\\n**Describe a memorable summer vacation you had as a child.**\\n\\nYou should say:\\n\\n* where you went\\n* who you went with\\n* what you did during the vacation\\n* and explain why this vacation was so memorable\\n\\nYou have one minute to prepare and take notes before you start speaking. You will have one to two minutes to speak on this topic. \\n\\nPlease respond as if you were in a real IELTS speaking test. I'll take the role of the examiner. Go ahead and start your preparation. ( Waiting for your response )\",\n            \"topic\": \"Summer Vacation\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "question-pages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Page and Pages fields should exist and be numbers\", function () {",
+							"  const responseData = pm.response.json();",
+							"",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.page).to.exist.and.to.be.a('number');",
+							"  pm.expect(responseData.pages).to.exist.and.to.be.a('number');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Questions array is present and contains expected number of elements\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.questions).to.exist.and.to.be.an('array');",
+							"    pm.expect(responseData.questions).to.have.lengthOf(1);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate properties in questions array\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.questions).to.be.an('array');",
+							"    ",
+							"    responseData.questions.forEach(function (question) {",
+							"        pm.expect(question.created_at).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z$/, \"Invalid date format\");",
+							"        pm.expect(question.id).to.be.a('number').and.to.satisfy((id) => id >= 0, \"Id must be a non-negative integer\");",
+							"        pm.expect(question.question).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Question should not be empty\");",
+							"        pm.expect(question.topic).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Topic should not be empty\");",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDc4MzIwMTF9.SiZwuP36J1d_HAHHmhCn3CplfxcWZNxJMzgN5065JW8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/questions/get-question-pages?page=7&limit=5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"questions",
+						"get-question-pages"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "7"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "question-pages",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/questions/get-question-pages?page=7&limit=5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"questions",
+								"get-question-pages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "7"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 11:17:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1244"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"page\": 7,\n    \"pages\": 18,\n    \"questions\": [\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 65,\n            \"question\": \"Do you think solar flares could pose a threat to Earth in the future? Why or why not?\",\n            \"topic\": \"Solar flares\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 53,\n            \"question\": \"How do you think edge computing can benefit IoT devices in terms of data processing and efficiency?\",\n            \"topic\": \"Edge Computing in IoT Devices\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 52,\n            \"question\": \"What are the potential benefits of using microbial fuel cells as a source of clean energy?\",\n            \"topic\": \"Microbial Fuel Cells for Clean Energy\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 54,\n            \"question\": \"How do you think the integration of tactile feedback in robotic surgery can improve surgical outcomes and patient safety?\",\n            \"topic\": \"Tactile Feedback in Robotic Surgery\"\n        },\n        {\n            \"created_at\": \"2025-05-23T10:02:26\",\n            \"id\": 51,\n            \"question\": \"How can bioinformatics be utilized in the discovery of rare diseases?\",\n            \"topic\": \"Bioinformatics in Rare Disease Discovery\"\n        }\n    ],\n    \"total\": 86\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"User object should exist and have required properties\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.user).to.exist;",
+							"  pm.expect(responseData.user).to.have.property('email').that.is.a('string');",
+							"  pm.expect(responseData.user).to.have.property('id').that.is.a('number');",
+							"  pm.expect(responseData.user).to.have.property('name').that.is.a('string');",
+							"  pm.expect(responseData.user).to.have.property('role').that.is.a('string');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Token is a non-empty string\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData.token).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Token should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"User object contains email, id, name, and role\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.user).to.be.an('object');",
+							"  pm.expect(responseData.user).to.include.all.keys('email', 'id', 'name', 'role');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"arjun.sarkar2025@example.com\",\r\n  \"password\": \"StrongPass#2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"arjun.sarkar2025@example.com\",\r\n  \"password\": \"StrongPass#2025\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 12:33:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "315"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDgwMDcxOTF9.yMYvxjkO38nihnEhZ41gOCEDdMRJBMtGkr7cqJK1FBc\",\n    \"user\": {\n        \"email\": \"arjun.sarkar2025@example.com\",\n        \"id\": 9,\n        \"name\": \"Arjun Sarkar\",\n        \"role\": \"admin\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Priya Verma\",\r\n  \"email\": \"priya.verma2025@example.com\",\r\n  \"phone\": \"9123456789\",\r\n  \"password\": \"UltraSafe$2025\",\r\n  \"role\": \"test_taker\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 201\", function () {",
+							"    pm.expect(pm.response.code).to.equal(201);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('created_at');",
+							"    pm.expect(responseData).to.have.property('id');",
+							"    pm.expect(responseData).to.have.property('status');",
+							"    pm.expect(responseData).to.have.property('test_date');",
+							"    pm.expect(responseData).to.have.property('user_id');",
+							"});",
+							"",
+							"",
+							"pm.test(\"ID is a non-negative integer\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.id).to.exist.and.to.be.a('number').and.to.satisfy((val) => val >= 0, \"ID should be a non-negative integer\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Test date is in a valid date format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.test_date).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);",
+							"});",
+							"",
+							"",
+							"pm.test(\"User ID is a non-negative integer\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.user_id).to.be.a('number').and.to.satisfy((val) => val >= 0, \"User ID should be a non-negative integer\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"user_id\": 5,\r\n    \"test_date\": \"2025-04-10T14:30:00\",\r\n    \"score\": 8,\r\n    \"status\": \"completed\"\r\n  }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/speaking_tests/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"speaking_tests",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create_test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"user_id\": 5,\r\n    \"test_date\": \"2025-04-10T14:30:00\",\r\n    \"score\": 8,\r\n    \"status\": \"completed\"\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/speaking_tests/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"speaking_tests",
+								"create"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 12:29:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "150"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"created_at\": \"2025-05-23T12:28:05\",\n    \"id\": 10,\n    \"score\": null,\n    \"status\": \"completed\",\n    \"test_date\": \"2025-04-10T14:30:00\",\n    \"user_id\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Surya\",\r\n    \"email\": \"suryacsp@proton.me\",\r\n    \"phone\": \"8842374388\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/users/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate_speaking_question",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required field 'question'\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.question).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Question field is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.question).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Question field should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Verify that the 'question' is a valid format for a question\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.question).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Question should not be empty\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDgwMDcxOTF9.yMYvxjkO38nihnEhZ41gOCEDdMRJBMtGkr7cqJK1FBc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topic\": \"Human race extinction\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/questions/generate-question",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"questions",
+						"generate-question"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "generated_question",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic\": \"Human race extinction\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/questions/generate-question",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"questions",
+								"generate-question"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 12:33:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"question\": \"Do you think the human race will face extinction in the future? Why or why not?\"\n}"
+				}
+			]
+		},
+		{
+			"name": "generate_multiple_questions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields - question and topic\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.generated).to.be.an('array').that.is.not.empty;",
+							"    ",
+							"    responseData.generated.forEach(function(item) {",
+							"        pm.expect(item).to.have.property('question');",
+							"        pm.expect(item).to.have.property('topic');",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Generated array is present and contains expected number of elements\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.generated).to.exist.and.to.be.an('array');",
+							"    pm.expect(responseData.generated.length).to.equal(2); // Replace 2 with the expected number of elements",
+							"});",
+							"",
+							"",
+							"pm.test(\"Generated question is a non-empty string\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.generated).to.be.an('array');",
+							"    responseData.generated.forEach(function(item) {",
+							"        pm.expect(item.question).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Question should not be empty\");",
+							"    });",
+							"});",
+							"",
+							"pm.test(\"Generated topic is a non-empty string\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.generated).to.be.an('array');",
+							"    responseData.generated.forEach(function(item) {",
+							"        pm.expect(item.topic).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Topic should not be empty\");",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NDgwMDcxOTF9.yMYvxjkO38nihnEhZ41gOCEDdMRJBMtGkr7cqJK1FBc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"topics\": [\r\n    \"Christman celebration\",\r\n    \"Diwali Festival\",\r\n    \"Ramzan fasting\"\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/questions/generate-questions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"questions",
+						"generate-questions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "generated_questions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topics\": [\r\n    \"Christman celebration\",\r\n    \"Diwali Festival\",\r\n    \"Ramzan fasting\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/questions/generate-questions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"questions",
+								"generate-questions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.13.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 May 2025 12:36:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "523"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"generated\": [\n        {\n            \"question\": \"Do you think Christmas has become too commercialized in today's society?\",\n            \"topic\": \"Christman celebration\"\n        },\n        {\n            \"question\": \"What are some traditional customs and activities associated with the Diwali Festival in your country?\",\n            \"topic\": \"Diwali Festival\"\n        },\n        {\n            \"question\": \"Do you think participating in Ramzan fasting can have a positive impact on a person's physical and mental well-being?\",\n            \"topic\": \"Ramzan fasting\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
