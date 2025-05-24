@@ -6,7 +6,7 @@ This repository provides a Flask-based RESTful API for managing IELTS-style spea
 
 - **User Management**: Registration, login, and listing of users with support for roles (admin, test_taker).
 - **Authentication & Authorization**: JWT-based authentication; endpoints protected by role (admin/test_taker).
-- **Speaking Test Management**: Schedule, track, and score speaking tests for users.
+- **Speaking Test Management**: Schedule, track, and score speaking tests for users. [In progress] 
 - **AI Question Generation**: Admins can generate IELTS-style speaking questions using Azure OpenAI integration.
 - **Question Retrieval**: Fetch paginated and recent questions, both synchronously and asynchronously.
 - **Logging**: Detailed request and response logging for debugging and audit.
@@ -35,7 +35,7 @@ This repository provides a Flask-based RESTful API for managing IELTS-style spea
 
 ### Speaking Tests
 
-- Endpoints for speaking test creation, management, and scoring (see source code)
+- Endpoints for speaking test creation, management, and scoring (yet to implement)
 
 ### Questions
 
@@ -68,13 +68,17 @@ This repository provides a Flask-based RESTful API for managing IELTS-style spea
    ```
 
 4. Run database migrations:
-   ```bash
+   ```cmd
+   flask db init
+   
+	flask db migrate -m "Initial schema for IELTS test"
+
    flask db upgrade
    ```
 
 5. Start the application:
-   ```bash
-   flask run
+   ```
+   python app.py
    ```
 
 ## Folder Structure
